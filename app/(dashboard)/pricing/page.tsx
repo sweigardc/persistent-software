@@ -35,8 +35,6 @@ export default async function PricingPage() {
         <PricingCard
           name={plusPlan?.name || 'Development'}
           price={plusPrice?.unitAmount || 10000}
-          interval={plusPrice?.interval || 'month'}
-          trialDays={plusPrice?.trialPeriodDays || 7}
           features={[
             '1 hour development time',
             'Functional MVP',
@@ -53,15 +51,11 @@ export default async function PricingPage() {
 function PricingCard({
   name,
   price,
-  interval,
-  trialDays,
   features,
   priceId,
 }: {
   name: string;
   price: number;
-  interval: string;
-  trialDays: number;
   features: string[];
   priceId?: string;
 }) {
