@@ -9,6 +9,7 @@ import { Label } from '@/components/ui/label';
 import { CircleIcon, Loader2 } from 'lucide-react';
 import { signIn, signUp } from './actions';
 import { ActionState } from '@/lib/auth/middleware';
+import Image from 'next/image';
 
 export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
   const searchParams = useSearchParams();
@@ -24,7 +25,14 @@ export function Login({ mode = 'signin' }: { mode?: 'signin' | 'signup' }) {
     <div className="min-h-[100dvh] flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8 bg-gray-50">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <div className="flex justify-center">
-          <CircleIcon className="h-12 w-12 text-sky-500" />
+          <Image
+            src="/ps-logo.png"
+            width={100}
+            height={100}
+            className="hidden md:block"
+            alt="Logo"
+          />          
+
         </div>
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
           {mode === 'signin'

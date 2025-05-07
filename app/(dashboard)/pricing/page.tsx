@@ -12,34 +12,34 @@ export default async function PricingPage() {
     getStripeProducts(),
   ]);
 
-  const basePlan = products.find((product) => product.name === 'Base');
-  const plusPlan = products.find((product) => product.name === 'Plus');
+  const basePlan = products.find((product) => product.name === 'Consultation');
+  const plusPlan = products.find((product) => product.name === 'Development');
 
   const basePrice = prices.find((price) => price.productId === basePlan?.id);
   const plusPrice = prices.find((price) => price.productId === plusPlan?.id);
-
+  console.log(basePlan);
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="grid md:grid-cols-2 gap-8 max-w-xl mx-auto">
         <PricingCard
-          name={basePlan?.name || 'Base'}
-          price={basePrice?.unitAmount || 800}
-          interval={basePrice?.interval || 'month'}
-          trialDays={basePrice?.trialPeriodDays || 7}
+          name={basePlan?.name || 'Consultation'}
+          price={basePrice?.unitAmount || 5000}
           features={[
-            'Unlimited Usage',
+            '1 hour project planning session',
+            'Product Roadmap',
             'Unlimited Workspace Members',
             'Email Support',
           ]}
           priceId={basePrice?.id}
         />
         <PricingCard
-          name={plusPlan?.name || 'Plus'}
-          price={plusPrice?.unitAmount || 1200}
+          name={plusPlan?.name || 'Development'}
+          price={plusPrice?.unitAmount || 10000}
           interval={plusPrice?.interval || 'month'}
           trialDays={plusPrice?.trialPeriodDays || 7}
           features={[
-            'Everything in Base, and:',
+            '1 hour development time',
+            'Functional MVP',
             'Early Access to New Features',
             '24/7 Support + Slack Access',
           ]}
@@ -68,14 +68,11 @@ function PricingCard({
   return (
     <div className="pt-6">
       <h2 className="text-2xl font-medium text-gray-900 mb-2">{name}</h2>
-      <p className="text-sm text-gray-600 mb-4">
-        with {trialDays} day free trial
-      </p>
       <p className="text-4xl font-medium text-gray-900 mb-6">
         ${price / 100}{' '}
-        <span className="text-xl font-normal text-gray-600">
-          per user / {interval}
-        </span>
+         <span className="text-xl font-normal text-gray-600">
+          per hour
+        </span>        
       </p>
       <ul className="space-y-4 mb-8">
         {features.map((feature, index) => (

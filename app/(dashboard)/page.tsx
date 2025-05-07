@@ -18,6 +18,20 @@ export default function HomePage() {
                 ready-to-use template. Packed with modern technologies and
                 essential integrations.
               </p>
+              <div className="mt-8 sm:max-w-lg sm:mx-auto sm:text-center lg:text-left lg:mx-0">
+                <a
+                  href="/pricing"
+                >
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="text-lg rounded-full"
+                  >
+                    View Pricing
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </a>
+              </div>
             </div>
             <div className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
               <Terminal />
@@ -87,13 +101,25 @@ export default function HomePage() {
           <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-                Ready to launch your idea?
+                Ready to launch?
               </h2>
               <p className="mt-3 max-w-3xl text-lg text-gray-500">
                 Our template provides everything you need to get your product up
                 and running quickly. Don't waste time on boilerplate - focus on
                 what makes your product unique.
               </p>
+            </div>
+            <div className="mt-8 lg:mt-0 flex justify-center lg:justify-end">
+              <a href="/sign-up">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg rounded-full"
+                >
+                  Get Started
+                  <ArrowRight className="ml-3 h-6 w-6" />
+                </Button>
+              </a>
             </div>
           </div>
         </div>

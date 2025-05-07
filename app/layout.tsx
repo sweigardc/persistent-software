@@ -4,10 +4,11 @@ import { Manrope } from 'next/font/google';
 import { getUser, getTeamForUser } from '@/lib/db/queries';
 import { SWRConfig } from 'swr';
 import { Analytics } from "@vercel/analytics/react"
+import { Footer } from '@/components/ui/footer';
 
 export const metadata: Metadata = {
   title: 'Persistent Software',
-  description: 'Get started quickly with Next.js, Postgres, and Stripe.'
+  description: 'Build your product quickly with Next.js, Postgres, and Stripe.'
 };
 
 export const viewport: Viewport = {
@@ -40,6 +41,7 @@ export default function RootLayout({
           {children}
           <Analytics />
         </SWRConfig>
+        <Footer />
       </body>
     </html>
   );
