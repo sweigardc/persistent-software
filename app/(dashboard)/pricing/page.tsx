@@ -12,12 +12,13 @@ export default async function PricingPage() {
     getStripeProducts(),
   ]);
 
+
   const basePlan = products.find((product) => product.name === 'Consultation');
   const plusPlan = products.find((product) => product.name === 'Development');
 
   const basePrice = prices.find((price) => price.productId === basePlan?.id);
   const plusPrice = prices.find((price) => price.productId === plusPlan?.id);
-  console.log(basePlan);
+
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="grid md:grid-cols-2 gap-8 max-w-xl mx-auto">
@@ -37,7 +38,7 @@ export default async function PricingPage() {
           price={plusPrice?.unitAmount || 10000}
           features={[
             '1 hour development time',
-            'Functional MVP',
+            'Functional prototype',
             'Early Access to New Features',
             '24/7 Support + Slack Access',
           ]}
@@ -76,10 +77,9 @@ function PricingCard({
           </li>
         ))}
       </ul>
-      <form action={checkoutAction}>
-        <input type="hidden" name="priceId" value={priceId} />
+
         <SubmitButton />
-      </form>
+
     </div>
   );
 }
