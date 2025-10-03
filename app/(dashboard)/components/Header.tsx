@@ -12,7 +12,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <img src={logo} alt="Persistent Software" className="h-10 w-10" />
+            <img src={logo.src} alt="Persistent Software" className="h-10 w-10" />
             <span className="text-cyan-400">Persistent Software</span>
           </div>
 

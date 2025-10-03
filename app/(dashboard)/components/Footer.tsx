@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <img src={logo} alt="Persistent Software" className="h-8 w-8" />
+              <img src={logo.src} alt="Persistent Software" className="h-8 w-8" />
               <span className="text-cyan-400">Persistent Software</span>
             </div>
             <p className="text-foreground/60">
