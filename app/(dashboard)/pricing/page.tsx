@@ -77,9 +77,10 @@ function PricingCard({
           </li>
         ))}
       </ul>
-
+      <form action={checkoutAction}>
+        <input type="hidden" name="priceId" value={priceId} />
         <SubmitButton />
-
+      </form>
     </div>
   );
 }

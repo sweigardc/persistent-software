@@ -30,6 +30,7 @@
     "drizzle-orm": "^0.42.0",
     "jose": "^6.0.10",
     "lucide-react": "^0.501.0",
+    "motion": "^12.23.22",
     "next": "15.4.0-canary.9",
     "postcss": "^8.5.3",
     "postgres": "^3.4.5",
