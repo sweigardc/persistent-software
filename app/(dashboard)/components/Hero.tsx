@@ -114,7 +114,7 @@ export function Hero() {
               
               {/* Logo */}
               <motion.img
-                src={logo}
+                src={logo.src}
                 alt="Persistent Software"
                 className="w-96 h-96 relative z-10"
                 animate={{
