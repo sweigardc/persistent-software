@@ -35,7 +35,7 @@ export default function Privacy() {
       <section className="mb-6">
         <h2 className="text-xl font-semibold mb-2">4. Sharing of Information</h2>
         <p>
-          We do not sell or rent your personal information. We may share data with trusted third-party service providers for the purpose of hosting, analytics, and communication—only to the extent necessary for them to perform their services.
+          We do not sell or rent your personal information. We may share data with trusted third-party service providers for the purpose of hosting, analytics, and communication - only to the extent necessary for them to perform their services.
         </p>
       </section>
 

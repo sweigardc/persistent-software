@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import logo from 'figma:asset/bc6198be9a6d14efebfe55ab6fe2bca78489b7f2.png';
 
 export function Header() {

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Zap, Cpu, Blocks, Rocket, Shield, Users } from 'lucide-react';
-import { Card, CardContent } from './ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 
 const features = [
   {
