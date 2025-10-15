@@ -8,7 +8,15 @@ import { Footer } from '@/components/ui/footer';
 
 export const metadata: Metadata = {
   title: 'Persistent Software',
-  description: 'Build your product quickly with Next.js, Postgres, and Stripe.'
+  description: 'Build your product quickly with Python, Next.js, and Postgres.',
+  keywords: "python, next.js, postgres, stripe, saas, software, web development, react, react native, typescript, tailwindcss, chris sweigard, full stack engineer, persistent software",
+  authors: [{ name: 'Persistent Software', url: 'https://www.persistentsoftware.com' }],
+  openGraph: {
+    title: 'Persistent Software',
+    description: 'Build your product quickly with Python, Next.js, and Postgres.',
+    url: 'https://www.persistentsoftware.com',
+    siteName: 'Persistent Software',
+  }
 };
 
 export const viewport: Viewport = {
