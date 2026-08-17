@@ -28,7 +28,7 @@ export default function HomePage() {
 
               <h1 className="text-4xl font-bold text-foreground tracking-tight sm:text-5xl md:text-6xl">
                 Ship real software,
-                <span className="block text-cyan-500">not more meetings.</span>
+                <span className="block text-cyan-500">faster than ever.</span>
               </h1>
               <p className="mt-3 text-base text-foreground/70 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                 Persistent Software pairs 20+ years of full-stack engineering with
