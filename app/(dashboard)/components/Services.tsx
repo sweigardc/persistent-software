@@ -16,14 +16,14 @@ const services = [
     ],
   },
   {
-    title: 'Template-Based Solutions',
-    description: 'Start with proven architectures and patterns that have been tested in production.',
+    title: 'Full-Stack Product Development',
+    description: 'End-to-end engineering across frontend, backend, and infrastructure — built custom for your product.',
     image: 'https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwaW5ub3ZhdGlvbnxlbnwxfHx8fDE3NTk0MjA4NjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     features: [
-      'Pre-built component libraries',
-      'Scalable architecture patterns',
+      'Custom architecture design',
+      'Scalable infrastructure',
       'Industry best practices',
-      'Customizable frameworks',
+      'Maintainable, well-tested code',
     ],
   },
   {

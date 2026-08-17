@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Zap, Cpu, Blocks, Rocket, Shield, Users } from 'lucide-react';
+import { Zap, Cpu, Layers, Rocket, Shield, Users } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const features = [
@@ -14,9 +14,9 @@ const features = [
     description: 'Leverage cutting-edge AI to automate repetitive tasks and accelerate development cycles.',
   },
   {
-    icon: Blocks,
-    title: 'Template Library',
-    description: 'Access our extensive library of battle-tested templates and components for instant development.',
+    icon: Layers,
+    title: 'Clean Architecture',
+    description: 'Every project is built on modern, maintainable architecture designed to scale with your business.',
   },
   {
     icon: Rocket,
@@ -51,7 +51,7 @@ export function Features() {
             Why Choose Persistent Software
           </h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            We combine the power of AI with proven templates to deliver exceptional software at unprecedented speed.
+            We combine the power of AI with hands-on engineering expertise to deliver exceptional software at unprecedented speed.
           </p>
         </motion.div>
 

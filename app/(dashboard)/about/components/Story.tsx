@@ -15,7 +15,7 @@ export function Story() {
                 From leading engineering teams at Teachley's game-based learning platform to building BeerXchange as a successful side project, I've learned that speed and quality don't have to be mutually exclusive.
               </p>
               <p>
-                Today, I combine proven templates, modern frameworks, and AI-assisted development to deliver production-ready applications in a fraction of the traditional timeline - without sacrificing the robust architecture and clean code that enterprise clients demand.
+                Today, I combine modern frameworks and AI-assisted development to deliver production-ready applications in a fraction of the traditional timeline - without sacrificing the robust architecture and clean code that enterprise clients demand.
               </p>
             </div>
           </div>
@@ -43,7 +43,7 @@ export function Story() {
                 <div className="space-y-2">
                   <h3>Rapid Delivery</h3>
                   <p className="text-muted-foreground">
-                    Using powerful templates and AI code generation to turn ideas into working prototypes in days, not months.
+                    Using AI-assisted code generation to turn ideas into working prototypes in days, not months.
                   </p>
                 </div>
               </div>

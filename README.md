@@ -1,6 +1,6 @@
 # Persistent Software
 
-Software development consulting for startups. Focused on rapid application prototyping using templates and AI code generation.
+Software development consulting for startups. Focused on rapid application prototyping using AI code generation.
 
 Using **Next.js** with support for authentication, Stripe integration for payments, and a dashboard for logged-in users.
 

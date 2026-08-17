@@ -7,12 +7,12 @@ export function Terminal() {
   const [terminalStep, setTerminalStep] = useState(0);
   const [copied, setCopied] = useState(false);
   const terminalSteps = [
-    'git clone https://github.com/nextjs/saas-starter',
-    'pnpm install',
-    'pnpm db:setup',
-    'pnpm db:migrate',
-    'pnpm db:seed',
-    'pnpm dev 🎉',
+    '~ kickoff call: scope the build',
+    '~ architecture + design review',
+    '~ week 1: working prototype',
+    '~ weekly demos, fast iteration',
+    '~ ship to production',
+    '~ you own the codebase 🎉',
   ];
 
   useEffect(() => {
@@ -58,7 +58,7 @@ export function Terminal() {
               key={index}
               className={`${index > terminalStep ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
             >
-              <span className="text-green-400">$</span> {step}
+              <span className="text-cyan-400">$</span> {step}
             </div>
           ))}
         </div>

@@ -30,7 +30,7 @@ const services = [
   {
     icon: Zap,
     title: "Rapid Prototyping",
-    description: "AI-powered code generation and templates to validate ideas in days, not weeks."
+    description: "AI-powered code generation to validate ideas in days, not weeks."
   }
 ];
 

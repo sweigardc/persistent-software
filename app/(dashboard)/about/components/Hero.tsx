@@ -15,7 +15,7 @@ export function Hero() {
               Engineering Excellence, Delivered Fast
             </h1>
             <p className="text-xl opacity-90 max-w-xl">
-              Leveraging 20+ years of full-stack engineering expertise to build exceptional software solutions using cutting-edge templates and AI-powered code generation.
+              Leveraging 20+ years of full-stack engineering expertise to build exceptional software solutions with modern frameworks and AI-powered code generation.
             </p>
           </div>
           

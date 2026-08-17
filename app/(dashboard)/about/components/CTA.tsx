@@ -19,7 +19,7 @@ export function CTA() {
               Get in Touch
             </Button>
           </a>
-          <a href="https://calendly.com/chris-persistentsoftware/30min" target="_blank" rel="noopener noreferrer">
+          <a href="https://calendly.com/chris-persistentsoftware" target="_blank" rel="noopener noreferrer">
             <Button size="lg" variant="outline" className="gap-2">
               <Calendar className="w-5 h-5" />
               Schedule a Call

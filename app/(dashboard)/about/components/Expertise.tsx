@@ -6,7 +6,7 @@ const skills = [
   { category: "Mobile", items: ["iOS", "Android", "React Native", "App Store", "Google Play"] },
   { category: "Cloud & Services", items: ["Google Cloud", "Stripe", "Salesforce", "ClassLink", "Clever"] },
   { category: "Leadership", items: ["Team Management", "Hiring", "Mentoring", "Project Coordination"] },
-  { category: "AI & Modern Tools", items: ["AI Code Generation", "Template Systems", "Rapid Prototyping"] }
+  { category: "AI & Modern Tools", items: ["AI Code Generation", "Rapid Prototyping", "CI/CD"] }
 ];
 
 export function Expertise() {
