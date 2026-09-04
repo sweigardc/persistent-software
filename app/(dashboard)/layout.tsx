@@ -34,11 +34,17 @@ function UserMenu() {
     return (
       <>
         <Link
+          href="/migrations"
+          className="text-sm font-medium text-gray-700 hover:text-gray-900"
+        >
+          Migrations
+        </Link>
+        <Link
           href="/about"
           className="text-sm font-medium text-gray-700 hover:text-gray-900"
         >
           About
-        </Link>      
+        </Link>
 
       </>
     );
