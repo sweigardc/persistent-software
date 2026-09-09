@@ -24,13 +24,13 @@ export const metadata: Metadata = {
 
 export default function Migrations() {
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-paper">
       <Hero />
       <Economics />
       <Performance />
       <CaseStudy />
       <Approach />
       <CTA />
-    </div>
+    </main>
   );
 }

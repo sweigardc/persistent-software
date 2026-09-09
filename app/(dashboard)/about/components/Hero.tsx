@@ -1,36 +1,42 @@
-
+import { Button } from '@/components/ui/button';
+import { Band } from '@/components/ps/band';
+import { Figure } from '@/components/ps/figure';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary via-primary/95 to-primary/90 text-primary-foreground">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjA1IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
-      
-      <div className="relative max-w-7xl mx-auto px-6 py-24 md:py-32">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
-            <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <p className="opacity-90">About Persistent Software</p>
-            </div>
-            <h1 className="text-5xl md:text-6xl">
-              Engineering Excellence, Delivered Fast
-            </h1>
-            <p className="text-xl opacity-90 max-w-xl">
-              Leveraging 20+ years of full-stack engineering expertise to build exceptional software solutions with modern frameworks and AI-powered code generation.
-            </p>
-          </div>
-          
-          <div className="flex justify-center md:justify-end">
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-white/5 rounded-2xl blur-2xl"></div>
-              <img 
-                src="/chris.png"
-                alt="Founder" 
-                className="relative w-80 h-80 object-cover rounded-2xl shadow-2xl border-4 border-white/20"
-              />
-            </div>
+    <Band className="py-16 md:py-20">
+      <div className="grid items-center gap-12 md:grid-cols-[minmax(0,1fr)_280px]">
+        <div className="flex flex-col items-start gap-5">
+          <span className="ps-label tracking-[0.16em] text-signal-700">About</span>
+          <h1>Twenty years of shipping, one person to talk to.</h1>
+          <p className="max-w-[52ch] text-lead text-graphite-500">
+            I&rsquo;m Chris Sweigard. I&rsquo;ve led engineering at an education company
+            through an acquisition, built and sold side projects, and spent the last two
+            years folding AI tooling into a practice that still cares about architecture.
+          </p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button asChild variant="signal">
+              <a href="mailto:contact@persistentsoftware.com">Get in touch</a>
+            </Button>
+            <Button asChild variant="outline">
+              <a
+                href="https://calendly.com/chris-persistentsoftware"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Schedule a call
+              </a>
+            </Button>
           </div>
         </div>
+        <Figure
+          src="/chris.png"
+          alt="Chris Sweigard"
+          ratio="4/5"
+          caption="Chris Sweigard · Founder"
+          className="w-full max-w-[280px]"
+        />
       </div>
-    </section>
+    </Band>
   );
 }

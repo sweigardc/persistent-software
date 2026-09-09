@@ -1,236 +1,104 @@
 @import 'tailwindcss';
-/*
-  ---break---
-*/
-@custom-variant dark (&:is(.dark *));
 
 @plugin 'tailwindcss-animate';
+@custom-variant dark (&:is(.dark *));
 
-@variant dark (&:is(.dark *));
-
+/* ==========================================================================
+   Persistent Software design system — tokens
+   Two colour families: Graphite carries every surface, rule and word;
+   Signal (cyan) is rationed to one element per view.
+   ========================================================================== */
 @theme {
-  --color-background: hsl(var(--background));
-  --color-foreground: hsl(var(--foreground));
+  /* ---- Graphite ramp ---- */
+  --color-graphite-950: #070b0e;
+  --color-graphite-900: #0d1317;
+  --color-graphite-800: #172128;
+  --color-graphite-700: #24313a;
+  --color-graphite-600: #3a4a55;
+  --color-graphite-500: #566873;
+  --color-graphite-400: #7b8b95;
+  --color-graphite-300: #a6b2ba;
+  --color-graphite-200: #cbd4d9;
+  --color-graphite-100: #e5eaed;
+  --color-graphite-50: #f2f5f6;
+  --color-graphite-0: #fbfcfc;
 
-  --color-card: hsl(var(--card));
-  --color-card-foreground: hsl(var(--card-foreground));
+  /* ---- Signal ramp ---- */
+  --color-signal-900: #164e63;
+  --color-signal-800: #155e75;
+  --color-signal-700: #0e7490;
+  --color-signal-600: #0891b2;
+  --color-signal-500: #06b6d4;
+  --color-signal-400: #22d3ee;
+  --color-signal-300: #67e8f9;
+  --color-signal-200: #a5f3fc;
+  --color-signal-100: #cffafe;
+  --color-signal-50: #ecfeff;
+  --color-signal-ink: #04252d;
 
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-alert-500: #d4183d;
+  --color-alert-300: #fb7185;
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
+  /* ---- Semantic surfaces ---- */
+  --color-paper: #fbfcfc;
+  --color-ink: #070b0e;
+  --color-surface: #ffffff;
+  --color-sunk: #f2f5f6;
+  --color-rule: #e5eaed;
+  --color-rule-strong: #cbd4d9;
 
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  /* ---- Type scale: size / leading / tracking in matched triples ---- */
+  --text-display: 64px;
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.035em;
+  --text-h1: 46px;
+  --text-h1--line-height: 1.05;
+  --text-h1--letter-spacing: -0.035em;
+  --text-h2: 36px;
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.03em;
+  --text-h3: 24px;
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.02em;
+  --text-h4: 18px;
+  --text-h4--line-height: 1.3;
+  --text-h4--letter-spacing: -0.01em;
+  --text-lead: 18px;
+  --text-lead--line-height: 1.6;
+  --text-body: 16px;
+  --text-body--line-height: 1.65;
+  --text-label: 12px;
+  --text-label--line-height: 1;
+  --text-label--letter-spacing: 0.14em;
+  --text-code: 13.5px;
+  --text-code--line-height: 2;
 
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
+  /* ---- Shape: squarer reads as engineered ---- */
+  --radius-plate: 0px;
+  --radius-control: 4px;
+  --radius-panel: 8px;
 
-  --color-accent: hsl(var(--accent));
-  --color-accent-foreground: hsl(var(--accent-foreground));
+  /* Hairline first. No glows, no coloured shadows. */
+  --shadow-rest: none;
+  --shadow-raised: 0 2px 4px rgb(7 11 14 / 0.05), 0 10px 20px -12px rgb(7 11 14 / 0.14);
+  --shadow-floating: 0 28px 56px -20px rgb(7 11 14 / 0.24);
 
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  /* ---- Layout ---- */
+  --container-page: 1120px;
 
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
-
-  --color-sidebar: hsl(var(--sidebar-background));
-  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
-  --color-sidebar-primary: hsl(var(--sidebar-primary));
-  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
-  --color-sidebar-accent: hsl(var(--sidebar-accent));
-  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
-  --color-sidebar-border: hsl(var(--sidebar-border));
-  --color-sidebar-ring: hsl(var(--sidebar-ring));
-
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
+  /* ---- Motion: restrained and functional ---- */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out-soft: cubic-bezier(0, 0, 0.2, 1);
+  --duration-fast: 120ms;
+  --duration-base: 180ms;
+  --duration-slow: 320ms;
 }
-
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
-
-@layer utilities {
-  body {
-    font-family: 'Manrope', Arial, Helvetica, sans-serif;
-  }
-}
-
-@layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-/*
-  ---break---
-*/
-
-:root {
-  --background: hsl(0 0% 100%);
-  --foreground: hsl(240 10% 3.9%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(240 10% 3.9%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(240 10% 3.9%);
-  --primary: hsl(240 5.9% 10%);
-  --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(240 4.8% 95.9%);
-  --secondary-foreground: hsl(240 5.9% 10%);
-  --muted: hsl(240 4.8% 95.9%);
-  --muted-foreground: hsl(240 3.8% 46.1%);
-  --accent: hsl(240 4.8% 95.9%);
-  --accent-foreground: hsl(240 5.9% 10%);
-  --destructive: hsl(0 84.2% 60.2%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(240 5.9% 90%);
-  --input: hsl(240 5.9% 90%);
-  --ring: hsl(240 10% 3.9%);
-  --chart-1: hsl(12 76% 61%);
-  --chart-2: hsl(173 58% 39%);
-  --chart-3: hsl(197 37% 24%);
-  --chart-4: hsl(43 74% 66%);
-  --chart-5: hsl(27 87% 67%);
-  --radius: 0.6rem;
-}
-
-/*
-  ---break---
-*/
-
-.dark {
-  --background: hsl(240 10% 3.9%);
-  --foreground: hsl(0 0% 98%);
-  --card: hsl(240 10% 3.9%);
-  --card-foreground: hsl(0 0% 98%);
-  --popover: hsl(240 10% 3.9%);
-  --popover-foreground: hsl(0 0% 98%);
-  --primary: hsl(0 0% 98%);
-  --primary-foreground: hsl(240 5.9% 10%);
-  --secondary: hsl(240 3.7% 15.9%);
-  --secondary-foreground: hsl(0 0% 98%);
-  --muted: hsl(240 3.7% 15.9%);
-  --muted-foreground: hsl(240 5% 64.9%);
-  --accent: hsl(240 3.7% 15.9%);
-  --accent-foreground: hsl(0 0% 98%);
-  --destructive: hsl(0 62.8% 30.6%);
-  --destructive-foreground: hsl(0 0% 98%);
-  --border: hsl(240 3.7% 15.9%);
-  --input: hsl(240 3.7% 15.9%);
-  --ring: hsl(240 4.9% 83.9%);
-  --chart-1: hsl(220 70% 50%);
-  --chart-2: hsl(160 60% 45%);
-  --chart-3: hsl(30 80% 55%);
-  --chart-4: hsl(280 65% 60%);
-  --chart-5: hsl(340 75% 55%);
-}
-
-/*
-  ---break---
-*/
 
 @theme inline {
+  --font-sans: var(--font-manrope), system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* shadcn compatibility — the signed-in surfaces still address these names. */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -250,26 +118,145 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 8px;
 }
 
-/*
-  ---break---
-*/
+:root {
+  --background: #fbfcfc;
+  --foreground: #0d1317;
+  --card: #ffffff;
+  --card-foreground: #0d1317;
+  --popover: #ffffff;
+  --popover-foreground: #0d1317;
+  --primary: #0d1317;
+  --primary-foreground: #fbfcfc;
+  --secondary: #f2f5f6;
+  --secondary-foreground: #24313a;
+  --muted: #f2f5f6;
+  --muted-foreground: #566873;
+  --accent: #f2f5f6;
+  --accent-foreground: #0d1317;
+  --destructive: #d4183d;
+  --destructive-foreground: #fbfcfc;
+  --border: #e5eaed;
+  --input: #e5eaed;
+  --ring: #06b6d4;
+}
+
+.dark {
+  --background: #070b0e;
+  --foreground: #fbfcfc;
+  --card: #0d1317;
+  --card-foreground: #fbfcfc;
+  --popover: #0d1317;
+  --popover-foreground: #fbfcfc;
+  --primary: #fbfcfc;
+  --primary-foreground: #0d1317;
+  --secondary: #172128;
+  --secondary-foreground: #fbfcfc;
+  --muted: #172128;
+  --muted-foreground: #a6b2ba;
+  --accent: #172128;
+  --accent-foreground: #fbfcfc;
+  --destructive: #fb7185;
+  --destructive-foreground: #070b0e;
+  --border: #24313a;
+  --input: #24313a;
+  --ring: #22d3ee;
+}
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-rule);
   }
+
   body {
-    @apply bg-background text-foreground;
+    background: var(--color-paper);
+    color: var(--color-graphite-900);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* The repo never set a heading scale, and Tailwind preflight zeroes h1-h6,
+     so headings rendered at body size. This restores the scale. */
+  h1 {
+    font-size: var(--text-h1);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+  }
+  h2 {
+    font-size: var(--text-h2);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+  }
+  h3 {
+    font-size: var(--text-h3);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  h4 {
+    font-size: var(--text-h4);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+  }
+
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: var(--font-mono);
+  }
+
+  /* Focus is never the browser default and never a soft grey halo. */
+  :focus-visible {
+    outline: 2px solid var(--color-signal-500);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-signal-200);
+    color: var(--color-graphite-950);
+  }
+}
+
+@layer components {
+  /* The label voice: monospace, uppercase, tracked. Eyebrows, field labels,
+     nav items, footer links, metadata. */
+  .ps-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    line-height: 1;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  /* The one background pattern in the system: a 48px white grid on ink. */
+  .ps-grid-texture {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.055) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Cards have no border of their own — the lattice draws the grid. */
+  .ps-lattice {
+    display: grid;
+    gap: 1px;
+    background: var(--color-rule);
+    border: 1px solid var(--color-rule);
   }
 }

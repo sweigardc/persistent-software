@@ -1,9 +1,7 @@
-'use client';
-
-import { motion } from 'motion/react';
-import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Check, Plug, Server } from 'lucide-react';
+import { Band } from '@/components/ps/band';
+import { SectionHeader } from '@/components/ps/section-header';
+import { Plug, Server } from 'lucide-react';
 
 const integrate = [
   'A typed API client generated from your existing endpoints',
@@ -11,7 +9,7 @@ const integrate = [
   'Your identity provider stays yours: OIDC, SAML, Cognito, Auth0, Firebase',
   'A small backend-for-frontend when your APIs are too chatty for mobile',
   'No schema changes and no migrations demanded of your team',
-  'Contract tests so a server change cannot silently break the app',
+  'Contract tests so a server change cannot silently break the app'
 ];
 
 const build = [
@@ -20,7 +18,7 @@ const build = [
   'Push notifications, file storage, search, and scheduled jobs',
   'Payments and subscriptions through Stripe or the app stores',
   'An admin console your team uses without calling an engineer',
-  'Yours outright — the code, the accounts, the deployment pipeline',
+  'Yours outright — the code, the accounts, the deployment pipeline'
 ];
 
 const stack = [
@@ -35,109 +33,78 @@ const stack = [
   'Firebase',
   'Sentry',
   'App Store Connect',
-  'Google Play',
+  'Google Play'
 ];
+
+function Column({
+  icon: Icon,
+  title,
+  intro,
+  items
+}: {
+  icon: React.ComponentType<{ className?: string; strokeWidth?: number }>;
+  title: string;
+  intro: string;
+  items: string[];
+}) {
+  return (
+    <div className="flex flex-col gap-5 bg-surface p-8">
+      <Icon className="size-6 text-signal-700" strokeWidth={1.75} />
+      <div>
+        <h3>{title}</h3>
+        <p className="mt-2 text-graphite-500">{intro}</p>
+      </div>
+      <ul className="flex flex-col">
+        {items.map((item) => (
+          <li
+            key={item}
+            className="flex gap-3 border-b border-rule py-3 text-[15px] leading-snug text-graphite-600 last:border-0"
+          >
+            <span className="font-mono text-xs leading-6 text-signal-700">&rarr;</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function Backend() {
   return (
-    <section className="py-20 px-6 bg-background">
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-14 space-y-4"
-        >
-          <h2 className="text-4xl">Bring your backend, or let us build one</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Most companies asking for a mobile app already have the data somewhere.
-            The app should adapt to your systems — replacing them is a separate
-            decision, made on purpose, not smuggled in by a mobile project.
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <Card className="h-full border-border hover:border-cyan-500/50 transition-colors">
-              <CardContent className="p-8 space-y-5">
-                <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
-                  <Plug className="w-6 h-6 text-cyan-500" />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-2xl">Integrate with what you have</h3>
-                  <p className="text-muted-foreground">
-                    We meet your services where they are, however old they are. The
-                    integration layer absorbs the awkwardness so it never reaches
-                    the app or your backend team.
-                  </p>
-                </div>
-                <div className="space-y-3 pt-1">
-                  {integrate.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <Card className="h-full border-border hover:border-cyan-500/50 transition-colors">
-              <CardContent className="p-8 space-y-5">
-                <div className="w-12 h-12 bg-cyan-500/10 rounded-lg flex items-center justify-center">
-                  <Server className="w-6 h-6 text-cyan-500" />
-                </div>
-                <div className="space-y-2">
-                  <h3 className="text-2xl">Or we build it to your spec</h3>
-                  <p className="text-muted-foreground">
-                    No backend yet, or one you would rather not extend. We build
-                    exactly what the app requires, sized to your traffic and your
-                    budget instead of a hypothetical future one.
-                  </p>
-                </div>
-                <div className="space-y-3 pt-1">
-                  {build.map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
-                      <span className="text-muted-foreground">{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center space-y-6 mt-14"
-        >
-          <h3 className="text-2xl">What we build on</h3>
-          <div className="flex flex-wrap gap-2 justify-center max-w-4xl mx-auto">
-            {stack.map((item) => (
-              <Badge key={item} variant="secondary" className="px-3 py-1.5">
-                {item}
-              </Badge>
-            ))}
-          </div>
-        </motion.div>
+    <Band className="pt-0 pb-16 md:pt-0 md:pb-20">
+      <SectionHeader label="Your backend" />
+      <div className="mt-10 max-w-[68ch]">
+        <h2 className="text-h2">Bring your backend, or let me build one</h2>
+        <p className="mt-3.5 text-graphite-500">
+          Most companies asking for a mobile app already have the data somewhere. The app
+          should adapt to your systems — replacing them is a separate decision, made on
+          purpose, not smuggled in by a mobile project.
+        </p>
       </div>
-    </section>
+
+      <div className="ps-lattice mt-10 md:grid-cols-2">
+        <Column
+          icon={Plug}
+          title="Integrate with what you have"
+          intro="I meet your services where they are, however old they are. The integration layer absorbs the awkwardness so it never reaches the app or your backend team."
+          items={integrate}
+        />
+        <Column
+          icon={Server}
+          title="Or I build it to your spec"
+          intro="No backend yet, or one you would rather not extend. I build exactly what the app requires, sized to your traffic and your budget instead of a hypothetical future one."
+          items={build}
+        />
+      </div>
+
+      <div className="mt-14 border-t border-rule pt-10">
+        <span className="ps-label text-graphite-500">What I build on</span>
+        <div className="mt-5 flex flex-wrap gap-1.5">
+          {stack.map((item) => (
+            <Badge key={item}>{item}</Badge>
+          ))}
+        </div>
+      </div>
+    </Band>
   );
 }
