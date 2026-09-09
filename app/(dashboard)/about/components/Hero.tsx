@@ -10,8 +10,8 @@ export function Hero() {
           <span className="ps-label tracking-[0.16em] text-signal-700">About</span>
           <h1>Twenty years of shipping, one person to talk to.</h1>
           <p className="max-w-[52ch] text-lead text-graphite-500">
-            I&rsquo;m Chris Sweigard. I&rsquo;ve led engineering at an education company
-            , built side projects, and spent the last two
+            I&rsquo;m Chris Sweigard. I&rsquo;ve led engineering at an education company,
+            built side projects, and spent the last two
             years folding AI tooling into a practice that still cares about architecture.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">

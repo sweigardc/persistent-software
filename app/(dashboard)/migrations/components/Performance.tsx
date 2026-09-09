@@ -84,7 +84,7 @@ export function Performance() {
       </Lattice>
 
       <p className="mt-8 max-w-[68ch] text-sm text-graphite-500">
-        Figures above are from the Java-to-Python engagement described below. Your numbers
+        Figures above are from a Java-to-Python engagement. Your numbers
         will depend on the shape of your workload — I measure the legacy baseline before
         starting so the comparison is honest.
       </p>

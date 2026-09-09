@@ -37,7 +37,8 @@ export function Story() {
             an idea and return a working product.
           </p>
           <p>
-            I led engineering at Teachley, a game-based learning platform and built BeerXchange as a side project on nights and weekends.
+            I led engineering at Teachley, a game-based learning platform, and built
+            BeerXchange as a side project on nights and weekends.
             Speed and quality are not opposites. Most of what makes software slow is work
             nobody needed to do.
           </p>

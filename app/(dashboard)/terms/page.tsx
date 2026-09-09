@@ -58,7 +58,7 @@ export default function Terms() {
       <section className="mb-6">
         <h2 className="mb-2 text-h4 text-graphite-900">8. Governing Law</h2>
         <p>
-          These Terms are governed by and construed in accordance with the laws of the State of [Insert Jurisdiction], without regard to its conflict of law principles.
+          These Terms are governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of law principles.
         </p>
       </section>
 

@@ -21,7 +21,7 @@ export default function HomePage() {
         <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
           <div className="flex flex-col items-start gap-6">
             <span className="ps-label border-b border-signal-300/40 pb-1.5 tracking-[0.16em] text-signal-300">
-              Personal · Experienced  · Fast
+              Personal · Experienced · Fast
             </span>
             <h1 className="text-h1 md:text-display">
               Working software

@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { Hero } from './components/Hero';
 import { Economics } from './components/Economics';
 import { Performance } from './components/Performance';
-import { CaseStudy } from './components/CaseStudy';
 import { Approach } from './components/Approach';
 import { CTA } from './components/CTA';
 
