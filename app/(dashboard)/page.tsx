@@ -1,106 +1,97 @@
-'use client';
-
-import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Sparkles, Mail } from 'lucide-react';
-import { Terminal } from './terminal';
-import { Features } from './components/Features';
+import { Band } from '@/components/ps/band';
+import { Stat } from '@/components/ps/stat';
+import { Terminal } from '@/components/ps/terminal';
 import { Services } from './components/Services';
+import { Process } from './components/Process';
+
+const terminalLines = [
+  'kickoff call: scope the build',
+  'architecture + design review',
+  'week 1: working prototype',
+  'weekly demos, fast iteration',
+  'ship to production',
+  'you own the codebase'
+];
 
 export default function HomePage() {
   return (
-    <main className="bg-background">
-      <section className="relative overflow-hidden py-20 sm:py-28">
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-background to-blue-500/10" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="lg:grid lg:grid-cols-12 lg:gap-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="sm:text-center md:max-w-2xl md:mx-auto lg:col-span-6 lg:text-left"
-            >
-              <div className="inline-flex items-center space-x-2 bg-cyan-500/10 border border-cyan-500/20 rounded-full px-4 py-2 mb-6">
-                <Sparkles className="w-4 h-4 text-cyan-500" />
-                <span className="text-cyan-600">AI-accelerated engineering</span>
-              </div>
-
-              <h1 className="text-4xl font-bold text-foreground tracking-tight sm:text-5xl md:text-6xl">
-                Ship real software,
-                <span className="block text-cyan-500">faster than ever.</span>
-              </h1>
-              <p className="mt-3 text-base text-foreground/70 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
-                Persistent Software pairs 20+ years of full-stack engineering with
-                AI-assisted development to turn your idea into a working product
-                in weeks, not months.
-              </p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4 sm:justify-center lg:justify-start">
-                {/*<a href="/pricing">
-                  <Button className="bg-cyan-500 hover:bg-cyan-600 text-white group w-full sm:w-auto">
-                    View Pricing
-                    <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </a>*/}
-                <a href="/about">
-                  <Button variant="outline" className="border-cyan-500/30 hover:bg-cyan-500/10 hover:border-cyan-500 w-full sm:w-auto">
-                    Meet the Team
-                  </Button>
+    <main>
+      <Band tone="ink" spine className="py-20 md:py-28">
+        <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)]">
+          <div className="flex flex-col items-start gap-6">
+            <span className="ps-label border-b border-signal-300/40 pb-1.5 tracking-[0.16em] text-signal-300">
+              Personal · Experienced · Fast
+            </span>
+            <h1 className="text-h1 md:text-display">
+              Working software
+              <br />
+              in week one.
+            </h1>
+            <p className="max-w-[46ch] text-lead text-graphite-300">
+              Persistent Software is one senior engineer with two decades of production
+              experience and modern tooling behind it. You get a prototype you can click in
+              days, and the codebase itself at the end.
+            </p>
+            <div className="flex flex-col gap-3 pt-1 sm:flex-row">
+              <Button asChild variant="signal" size="lg">
+                <a
+                  href="https://calendly.com/chris-persistentsoftware"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a scoping call
                 </a>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center"
-            >
-              <Terminal />
-            </motion.div>
+              </Button>
+              <Button asChild variant="inverse" size="lg">
+                <a href="#services">See what I build</a>
+              </Button>
+            </div>
+          </div>
+          <Terminal lines={terminalLines} />
+        </div>
+      </Band>
+
+      <Services />
+      <Process />
+
+      <Band tone="ink" spine className="py-16 md:py-20">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
+          <div>
+            <h2 className="text-h2">Tell me what you&rsquo;re building.</h2>
+            <p className="mt-3.5 max-w-[52ch] text-lead text-graphite-300">
+              A 30-minute call is enough to scope most projects. You&rsquo;ll leave it with a
+              plan and a number, whether or not we work together.
+            </p>
+          </div>
+          <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
+            <Button asChild variant="signal" size="lg">
+              <a
+                href="https://calendly.com/chris-persistentsoftware"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Book a call
+              </a>
+            </Button>
+            <Button asChild variant="inverse" size="lg">
+              <a href="mailto:contact@persistentsoftware.com">Email instead</a>
+            </Button>
           </div>
         </div>
-      </section>
 
-      <Features />
-      <Services />
-
-      <section className="py-24 bg-gradient-to-br from-cyan-500/10 via-background to-blue-500/10 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center"
-          >
-            <div>
-              <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
-                Ready to build?
-              </h2>
-              <p className="mt-3 max-w-3xl text-lg text-foreground/70">
-                Tell us about your idea and we'll map out a plan to ship a
-                working product fast. No lengthy discovery phase, no
-                unnecessary overhead — just focused engineering on what makes
-                your product unique.
-              </p>
-            </div>
-            <div className="mt-8 lg:mt-0 flex flex-col sm:flex-row justify-center lg:justify-end gap-4">
-              {/*<a href="/sign-up">
-                <Button className="bg-cyan-500 hover:bg-cyan-600 text-white group w-full sm:w-auto">
-                  Start Your Project
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </a>*/}
-              <a href="mailto:contact@persistentsoftware.com">
-                <Button variant="outline" className="border-cyan-500/30 hover:bg-cyan-500/10 hover:border-cyan-500 w-full sm:w-auto">
-                  <Mail className="mr-2 w-4 h-4" />
-                  Contact Us
-                </Button>
-              </a>
-            </div>
-          </motion.div>
+        <div className="mt-14 grid gap-x-8 gap-y-6 border-t border-graphite-700 pt-10 sm:grid-cols-3">
+          <Stat tone="ink" value="20" unit="+" className="p-0">
+            Years shipping production software
+          </Stat>
+          <Stat tone="ink" value="8" unit="+" className="p-0">
+            Years leading engineering teams
+          </Stat>
+          <Stat tone="ink" value="100" unit="%" className="p-0">
+            Of the code is yours at handover
+          </Stat>
         </div>
-      </section>
+      </Band>
     </main>
   );
 }

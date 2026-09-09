@@ -10,13 +10,13 @@ import { CTA } from './components/CTA';
 export const metadata: Metadata = {
   title: 'Mobile App Development | Persistent Software',
   description:
-    'React Native apps for iOS and Android. We rebuild vibe-coded prototypes into production apps, and offer a white-label app skinned for your brand — integrated with your backend or one we build.',
+    'React Native apps for iOS and Android. I rebuild vibe-coded prototypes into production apps, and offer a white-label app skinned for your brand — integrated with your backend or one we build.',
   keywords:
     'react native development, mobile app development, vibe coded app rebuild, white label mobile app, ios android app, expo, mobile backend, persistent software',
   openGraph: {
     title: 'Mobile App Development | Persistent Software',
     description:
-      'React Native apps for iOS and Android. We rebuild vibe-coded prototypes into production apps, and offer a white-label app skinned for your brand — integrated with your backend or one we build.',
+      'React Native apps for iOS and Android. I rebuild vibe-coded prototypes into production apps, and offer a white-label app skinned for your brand — integrated with your backend or one we build.',
     url: 'https://www.persistentsoftware.com/mobile',
     siteName: 'Persistent Software',
   },
@@ -24,13 +24,13 @@ export const metadata: Metadata = {
 
 export default function Mobile() {
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-paper">
       <Hero />
       <Rebuild />
       <WhiteLabel />
       <Backend />
       <Approach />
       <CTA />
-    </div>
+    </main>
   );
 }

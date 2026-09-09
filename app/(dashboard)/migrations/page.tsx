@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { Hero } from './components/Hero';
 import { Economics } from './components/Economics';
 import { Performance } from './components/Performance';
-import { CaseStudy } from './components/CaseStudy';
 import { Approach } from './components/Approach';
 import { CTA } from './components/CTA';
 
@@ -24,13 +23,12 @@ export const metadata: Metadata = {
 
 export default function Migrations() {
   return (
-    <div className="min-h-screen bg-background">
+    <main className="min-h-screen bg-paper">
       <Hero />
       <Economics />
       <Performance />
-      <CaseStudy />
       <Approach />
       <CTA />
-    </div>
+    </main>
   );
 }

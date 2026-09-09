@@ -1,21 +1,24 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
-import { Manrope } from 'next/font/google';
+import { Manrope, JetBrains_Mono } from 'next/font/google';
 import { getUser, getTeamForUser } from '@/lib/db/queries';
 import { SWRConfig } from 'swr';
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from '@vercel/analytics/react';
 import { Footer } from '@/components/ui/footer';
 
 export const metadata: Metadata = {
   title: 'Persistent Software',
-  description: 'Build your product quickly with Python, Next.js, and Postgres.',
-  keywords: "python, next.js, postgres, stripe, saas, software, web development, react, react native, typescript, tailwindcss, chris sweigard, full stack engineer, persistent software",
+  description:
+    'One senior engineer, twenty years of production experience. Full-stack builds, mobile apps, payments and integrations — and you own the codebase.',
+  keywords:
+    'python, next.js, postgres, stripe, saas, software, web development, react, react native, typescript, tailwindcss, chris sweigard, full stack engineer, persistent software',
   authors: [{ name: 'Persistent Software', url: 'https://www.persistentsoftware.com' }],
   openGraph: {
     title: 'Persistent Software',
-    description: 'Build your product quickly with Python, Next.js, and Postgres.',
+    description:
+      'One senior engineer, twenty years of production experience. Full-stack builds, mobile apps, payments and integrations — and you own the codebase.',
     url: 'https://www.persistentsoftware.com',
-    siteName: 'Persistent Software',
+    siteName: 'Persistent Software'
   }
 };
 
@@ -23,7 +26,20 @@ export const viewport: Viewport = {
   maximumScale: 1
 };
 
-const manrope = Manrope({ subsets: ['latin'] });
+// Manrope for voice, JetBrains Mono for evidence.
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-manrope',
+  display: 'swap'
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap'
+});
 
 export default function RootLayout({
   children
@@ -33,9 +49,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`bg-white dark:bg-gray-950 text-black dark:text-white ${manrope.className}`}
+      className={`${manrope.variable} ${jetbrainsMono.variable} bg-paper text-graphite-900`}
     >
-      <body className="min-h-[100dvh] bg-gray-50">
+      <body className="min-h-[100dvh] bg-paper font-sans antialiased">
         <SWRConfig
           value={{
             fallback: {

@@ -4,25 +4,24 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "./utils";
 
+// Tags are mono — they are metadata, not voice.
 const badgeVariants = cva(
-  "inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&>svg]:size-3 gap-1 [&>svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden",
+  "inline-flex h-[26px] w-fit shrink-0 items-center justify-center gap-1 whitespace-nowrap rounded-[3px] border px-2.5 font-mono text-[13px] font-medium leading-none [&>svg]:size-3 [&>svg]:pointer-events-none",
   {
     variants: {
       variant: {
-        default:
-          "border-transparent bg-primary text-primary-foreground [a&]:hover:bg-primary/90",
-        secondary:
-          "border-transparent bg-secondary text-secondary-foreground [a&]:hover:bg-secondary/90",
-        destructive:
-          "border-transparent bg-destructive text-white [a&]:hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
-        outline:
-          "text-foreground [a&]:hover:bg-accent [a&]:hover:text-accent-foreground",
-      },
+        default: "border-rule bg-sunk text-graphite-700",
+        secondary: "border-rule bg-sunk text-graphite-700",
+        signal: "border-signal-200 bg-signal-50 text-signal-800",
+        ink: "border-graphite-900 bg-graphite-900 text-graphite-0",
+        outline: "border-rule-strong bg-transparent text-graphite-500",
+        destructive: "border-alert-500 bg-alert-500 text-graphite-0"
+      }
     },
     defaultVariants: {
-      variant: "default",
-    },
-  },
+      variant: "default"
+    }
+  }
 );
 
 function Badge({

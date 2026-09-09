@@ -1,49 +1,38 @@
 import React from 'react';
 
+const links = [
+  { label: 'Mobile', href: '/mobile' },
+  { label: 'Migrations', href: '/migrations' },
+  { label: 'About', href: '/about' },
+  { label: 'Terms', href: '/terms' },
+  { label: 'Privacy', href: '/privacy' }
+];
+
 const Footer: React.FC = () => {
   return (
-    <div style={styles.footer}>
-      <div style={styles.container}>
-        <p style={styles.text}>© {new Date().getFullYear()} Persistent Software. All rights reserved.</p>
-        <nav style={styles.nav}>
-          <a href="/mobile" style={styles.link}>Mobile</a>
-          <a href="/migrations" style={styles.link}>Migrations</a>
-          <a href="/about" style={styles.link}>About Us</a>
-          <a href="/terms" style={styles.link}>Terms of Service</a>
-          <a href="/privacy" style={styles.link}>Privacy Policy</a>
-          <a href="mailto:contact@persistentsoftware.com" style={styles.link}>Contact Us</a>
+    <footer className="bg-ink">
+      <div className="mx-auto flex max-w-page flex-wrap items-center justify-between gap-5 px-6 py-8 font-mono text-xs font-medium leading-none tracking-[0.08em] text-graphite-400">
+        <span>© {new Date().getFullYear()} PERSISTENT SOFTWARE</span>
+        <nav className="flex flex-wrap items-center gap-x-6 gap-y-3">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-graphite-300 transition-colors duration-[120ms] hover:text-graphite-0"
+            >
+              {link.label.toUpperCase()}
+            </a>
+          ))}
+          <a
+            href="mailto:contact@persistentsoftware.com"
+            className="text-signal-300 transition-colors duration-[120ms] hover:text-signal-200"
+          >
+            CONTACT@PERSISTENTSOFTWARE.COM
+          </a>
         </nav>
       </div>
-    </div>
+    </footer>
   );
 };
 
-const styles = {
-  footer: {
-    backgroundColor: '#f8f9fa',
-    padding: '20px 0',
-    borderTop: '1px solid #e9ecef',
-    textAlign: 'center' as const,
-  },
-  container: {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    padding: '0 15px',
-  },
-  text: {
-    margin: '0',
-    fontSize: '14px',
-    color: '#6c757d',
-  },
-  nav: {
-    marginTop: '10px',
-  },
-  link: {
-    margin: '0 10px',
-    fontSize: '14px',
-    color: '#007bff',
-    textDecoration: 'none',
-  },
-};
-
-export { Footer } ;
+export { Footer };

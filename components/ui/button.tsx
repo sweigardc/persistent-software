@@ -5,27 +5,42 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  [
+    "inline-flex shrink-0 items-center justify-center gap-2 whitespace-nowrap",
+    "rounded-control border font-sans font-semibold leading-none",
+    // Hover is a surface or border shift. Never a lift, a scale or a shadow bloom.
+    "transition-[background-color,border-color,color] duration-[120ms] ease-[cubic-bezier(0.2,0,0,1)]",
+    "outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-signal-500",
+    "disabled:pointer-events-none disabled:opacity-40",
+    "[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
+  ].join(" "),
   {
     variants: {
       variant: {
+        // The default action: graphite, not colour.
         default:
-          "bg-primary text-primary-foreground shadow-xs hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-white shadow-xs hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 dark:bg-destructive/60",
+          "border-graphite-900 bg-graphite-900 text-graphite-0 hover:border-graphite-700 hover:bg-graphite-700",
+        // The one primary action per view. Rationed.
+        signal:
+          "border-signal-500 bg-signal-500 font-bold text-signal-ink hover:border-signal-400 hover:bg-signal-400 active:border-signal-600 active:bg-signal-600",
         outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50",
-        secondary:
-          "bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80",
+          "border-rule-strong bg-surface text-graphite-900 hover:border-graphite-900 hover:bg-sunk",
+        // Outline on an ink band.
+        inverse:
+          "border-graphite-600 bg-transparent text-graphite-0 hover:border-graphite-300 hover:bg-graphite-800",
         ghost:
-          "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline"
+          "border-transparent bg-transparent text-graphite-500 hover:bg-sunk hover:text-graphite-900",
+        destructive:
+          "border-alert-500 bg-alert-500 text-graphite-0 hover:opacity-90",
+        secondary:
+          "border-rule bg-sunk text-graphite-900 hover:border-rule-strong",
+        link: "border-transparent text-signal-700 underline-offset-4 hover:text-signal-600 hover:underline"
       },
       size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9"
+        sm: "h-8 px-3.5 text-[13px]",
+        default: "h-11 px-[22px] text-[15px]",
+        lg: "h-[54px] px-[30px] text-[17px]",
+        icon: "size-11 px-0"
       }
     },
     defaultVariants: {
