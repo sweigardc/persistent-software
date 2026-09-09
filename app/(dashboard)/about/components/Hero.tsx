@@ -30,7 +30,7 @@ export function Hero() {
           </div>
         </div>
         <Figure
-          src="/chris.png"
+          src="/chris-portrait.jpg"
           alt="Chris Sweigard"
           ratio="4/5"
           caption="Chris Sweigard · Founder"
