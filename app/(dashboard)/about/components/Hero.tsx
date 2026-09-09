@@ -34,6 +34,8 @@ export function Hero() {
           alt="Chris Sweigard"
           ratio="4/5"
           caption="Chris Sweigard · Founder"
+          sizes="(min-width: 768px) 280px, 100vw"
+          priority
           className="w-full max-w-[280px]"
         />
       </div>
