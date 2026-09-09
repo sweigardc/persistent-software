@@ -4,6 +4,7 @@ import { Stat } from '@/components/ps/stat';
 import { Terminal } from '@/components/ps/terminal';
 import { Services } from './components/Services';
 import { Process } from './components/Process';
+import { Product } from './components/Product';
 
 const terminalLines = [
   'kickoff call: scope the build',
@@ -54,6 +55,7 @@ export default function HomePage() {
 
       <Services />
       <Process />
+      <Product />
 
       <Band tone="ink" spine className="py-16 md:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
