@@ -6,37 +6,31 @@ import { Palette, Building2, Store, Settings2, Rocket, Users } from 'lucide-reac
 
 const pillars = [
   {
-    index: '01',
     icon: Palette,
     title: 'Skinned to your brand, not badged with mine',
     body: 'Colours, typography, iconography, app icon, splash screen and tone all come from a theme file. Nothing in the app tells your users it started as someone else’s product.'
   },
   {
-    index: '02',
     icon: Building2,
     title: 'Configured for each brand',
     body: 'Each brand gets its own content, locations, contacts and feature set from configuration rather than a code fork. Turning a module off for one brand does not put the others at risk.'
   },
   {
-    index: '03',
     icon: Store,
     title: 'Published under your accounts',
     body: 'Builds ship from your Apple and Google developer accounts, so the listing, the reviews and the users belong to you. One app per brand or one app with a brand picker — both work.'
   },
   {
-    index: '04',
     icon: Settings2,
     title: 'One codebase behind all of them',
     body: 'A fix or a new feature lands once and rolls out to every brand. Forking the app per client is what makes white-label programmes collapse in year two, so I do not do it.'
   },
   {
-    index: '05',
     icon: Rocket,
     title: 'Live in weeks, not quarters',
     body: 'Because the product already exists, launching a brand is a theming, configuration and store-submission exercise. The first one takes the longest; the ones after it take days.'
   },
   {
-    index: '06',
     icon: Users,
     title: 'You own what ships',
     body: 'You get the source, the build pipeline and the documentation. Hand it to an internal team later if you want to — the point is a working app, not a dependency on me.'
@@ -73,7 +67,7 @@ export function WhiteLabel() {
 
       <Lattice className="mt-10 md:grid-cols-2 lg:grid-cols-3">
         {pillars.map((pillar) => (
-          <LatticeCell key={pillar.index} index={pillar.index} icon={pillar.icon} title={pillar.title}>
+          <LatticeCell key={pillar.title} icon={pillar.icon} title={pillar.title}>
             {pillar.body}
           </LatticeCell>
         ))}

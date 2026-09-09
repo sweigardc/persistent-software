@@ -38,25 +38,21 @@ const phases = [
 
 const costDrivers = [
   {
-    index: '01',
     icon: Clock,
     title: 'The clock stops sooner',
     body: 'Every month a migration runs is a month you pay for two systems, freeze the roadmap and keep a team on hold. Compressing 18 months into 3 removes most of that carrying cost before a single line of code is priced.'
   },
   {
-    index: '02',
     icon: Users,
     title: 'A smaller team, not a bigger one',
     body: 'Rewrites usually get staffed with a dozen engineers to brute-force the reading. A senior engineer directing AI covers the same ground with far less coordination overhead — and no onboarding cliff.'
   },
   {
-    index: '03',
     icon: AlarmClock,
     title: 'Legacy licensing and support end',
     body: 'Application servers, commercial JDK support, per-core database licensing, EOL OS extended-support contracts. These line items disappear at cutover and they never come back.'
   },
   {
-    index: '04',
     icon: DollarSign,
     title: 'Infrastructure right-sizes itself',
     body: 'Old systems are provisioned for a peak that happens twice a year. Containerised services on autoscaling infrastructure bill for what you use, which is typically a fraction of the standing fleet.'
@@ -112,7 +108,7 @@ export function Economics() {
 
       <Lattice className="mt-10 md:grid-cols-2">
         {costDrivers.map((driver) => (
-          <LatticeCell key={driver.index} index={driver.index} icon={driver.icon} title={driver.title}>
+          <LatticeCell key={driver.title} icon={driver.icon} title={driver.title}>
             {driver.body}
           </LatticeCell>
         ))}

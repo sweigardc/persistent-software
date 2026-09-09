@@ -5,19 +5,16 @@ import { Briefcase, Rocket, Users } from 'lucide-react';
 
 const marks = [
   {
-    index: '01',
     icon: Briefcase,
     title: '20+ years shipping',
     body: 'From startups to a company acquired by Google, across web, mobile and backend systems.'
   },
   {
-    index: '02',
     icon: Rocket,
     title: 'A prototype in days',
     body: 'AI-assisted build, reviewed line by line, turning ideas into something clickable in week one.'
   },
   {
-    index: '03',
     icon: Users,
     title: 'Eight years leading engineers',
     body: 'Hiring, mentoring and coordinating with stakeholders — I can build the team that takes it over.'
@@ -51,7 +48,7 @@ export function Story() {
         </div>
         <Lattice className="self-start">
           {marks.map((mark) => (
-            <LatticeCell key={mark.index} index={mark.index} icon={mark.icon} title={mark.title}>
+            <LatticeCell key={mark.title} icon={mark.icon} title={mark.title}>
               {mark.body}
             </LatticeCell>
           ))}

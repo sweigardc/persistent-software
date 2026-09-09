@@ -13,14 +13,12 @@ export function Lattice({
 }
 
 export function LatticeCell({
-  index,
   icon: Icon,
   title,
   children,
   className,
   ...props
 }: React.ComponentProps<'div'> & {
-  index?: string;
   icon?: React.ComponentType<{ className?: string; strokeWidth?: number }>;
   title?: React.ReactNode;
 }) {
@@ -32,16 +30,7 @@ export function LatticeCell({
       )}
       {...props}
     >
-      {(Icon || index) && (
-        <div className="flex items-center justify-between">
-          {Icon ? <Icon className="size-[22px] text-signal-700" strokeWidth={1.75} /> : <span />}
-          {index && (
-            <span className="font-mono text-[11px] tracking-[0.12em] text-graphite-500">
-              {index}
-            </span>
-          )}
-        </div>
-      )}
+      {Icon && <Icon className="size-[22px] text-signal-700" strokeWidth={1.75} />}
       {title && <h3 className="text-h4">{title}</h3>}
       {children && <div className="text-[15px] leading-relaxed text-graphite-500">{children}</div>}
     </div>

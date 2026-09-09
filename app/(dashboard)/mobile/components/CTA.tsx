@@ -19,15 +19,9 @@ export function CTA() {
             you hire me to build it.
           </p>
           <ul className="mt-8 border-t border-graphite-700">
-            {deliverables.map((item, index) => (
-              <li
-                key={item}
-                className="flex gap-4 border-b border-graphite-700 py-3.5 text-graphite-300"
-              >
-                <span className="font-mono text-xs leading-6 text-signal-400">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span>{item}</span>
+            {deliverables.map((item) => (
+              <li key={item} className="border-b border-graphite-700 py-3.5 text-graphite-300">
+                {item}
               </li>
             ))}
           </ul>

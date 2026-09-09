@@ -5,37 +5,31 @@ import { Gauge, Activity, Rocket, ShieldCheck, Boxes, LineChart } from 'lucide-r
 
 const improvements = [
   {
-    index: '01',
     icon: Gauge,
     title: 'Latency drops because the fat comes out',
     body: 'A decade of accreted layers — an ORM wrapping a DAO wrapping a JDBC template, three serialization hops between services — gets replaced with a direct path. Most of the speedup is deleted work, not a faster language.'
   },
   {
-    index: '02',
     icon: Boxes,
     title: 'Elastic capacity instead of a standing fleet',
     body: 'Containers on Fargate scale on demand and scale back down. You stop paying peak-provisioned prices for a load that only shows up at month-end close.'
   },
   {
-    index: '03',
     icon: Rocket,
     title: 'Deploys measured in minutes',
     body: 'A build-and-push pipeline with rolling task replacement retires the WAR-file-and-restart ritual. Shipping a fix stops being an event that requires a calendar invite.'
   },
   {
-    index: '04',
     icon: Activity,
     title: 'Async I/O for I/O-bound work',
     body: 'Most business systems spend their time waiting on databases and third-party APIs. Modern async runtimes hold thousands of in-flight requests per task instead of pinning a thread to each one.'
   },
   {
-    index: '05',
     icon: LineChart,
     title: 'Observability that was never bolted on',
     body: 'Structured logs, traces and metrics get designed in during the port rather than reverse-engineered later. You find out about regressions from a dashboard, not from a customer.'
   },
   {
-    index: '06',
     icon: ShieldCheck,
     title: 'A dependency tree you can actually patch',
     body: 'Leaving an EOL runtime and unmaintained libraries behind turns “we cannot upgrade that” into a routine dependency bump — and takes a standing audit finding off the board.'
@@ -77,7 +71,7 @@ export function Performance() {
 
       <Lattice className="mt-10 md:grid-cols-2 lg:grid-cols-3">
         {improvements.map((item) => (
-          <LatticeCell key={item.index} index={item.index} icon={item.icon} title={item.title}>
+          <LatticeCell key={item.title} icon={item.icon} title={item.title}>
             {item.body}
           </LatticeCell>
         ))}

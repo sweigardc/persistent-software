@@ -38,37 +38,31 @@ const gaps = [
 
 const decisions = [
   {
-    index: '01',
     icon: Sparkles,
     title: 'What I keep',
     body: 'Everything you learned. The screens, the flows, the copy, the ordering of steps, the features users actually touched. A prototype that has been in front of real people is the most detailed product spec you will ever get, and it is yours already.'
   },
   {
-    index: '02',
     icon: Trash2,
     title: 'What I do not keep',
     body: 'The code. Generated app code is optimised for producing a convincing demo on the first try, not for being changed fifty times. Rewriting it against a known-good spec is faster and cheaper than untangling it.'
   },
   {
-    index: '03',
     icon: Gauge,
     title: 'It has to stay smooth at 60fps',
     body: 'Long lists get virtualised, images get sized and cached, and animations run on the native thread. Jank that is invisible in a browser preview is the first thing a user feels.'
   },
   {
-    index: '04',
     icon: Lock,
     title: 'The bundle is public',
     body: 'Anyone can unzip a shipped app. Keys move to the server, privileged calls move behind your API, and the client stops being trusted with anything it should not know.'
   },
   {
-    index: '05',
     icon: WifiOff,
     title: 'The network is not a given',
     body: 'Elevators, basements, planes and rural coverage are normal operating conditions. Reads come from cache, writes queue and reconcile, and the UI says what is happening instead of hanging.'
   },
   {
-    index: '06',
     icon: Store,
     title: 'Two reviewers stand between you and users',
     body: 'Apple and Google reject for permission strings, account deletion, data disclosures and login requirements. I handle submission and the first round of review notes as part of the build.'
@@ -109,7 +103,7 @@ export function Rebuild() {
 
       <Lattice className="mt-10 md:grid-cols-2 lg:grid-cols-3">
         {decisions.map((item) => (
-          <LatticeCell key={item.index} index={item.index} icon={item.icon} title={item.title}>
+          <LatticeCell key={item.title} icon={item.icon} title={item.title}>
             {item.body}
           </LatticeCell>
         ))}

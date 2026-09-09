@@ -25,25 +25,21 @@ const integrations = [
 
 const features = [
   {
-    index: '01',
     icon: Activity,
     title: 'Every provider on one page',
     body: 'Tokens in, out and cached, by model and by key, with each provider’s own spend numbers added up instead of read off three billing pages.'
   },
   {
-    index: '02',
     icon: BellRing,
     title: 'Budgets that warn you early',
     body: 'Set a monthly ceiling and thresholds. Each one fires once, recorded in the app and POSTed to a webhook if you want it somewhere else.'
   },
   {
-    index: '03',
     icon: KeyRound,
     title: 'Keys encrypted, never shown',
     body: 'Keys are verified once, encrypted with AES-256-GCM before they reach the database, and displayed by their last four characters afterwards.'
   },
   {
-    index: '04',
     icon: Download,
     title: 'Ninety days of history, exportable',
     body: 'The first sync back-fills 90 days so day one has something to compare against. Refreshes daily, and every view leaves as CSV.'
@@ -117,12 +113,7 @@ export function Product() {
 
       <Lattice className="mt-6 md:grid-cols-2">
         {features.map((feature) => (
-          <LatticeCell
-            key={feature.index}
-            index={feature.index}
-            icon={feature.icon}
-            title={feature.title}
-          >
+          <LatticeCell key={feature.title} icon={feature.icon} title={feature.title}>
             {feature.body}
           </LatticeCell>
         ))}

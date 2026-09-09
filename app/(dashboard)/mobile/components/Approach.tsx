@@ -33,37 +33,31 @@ const phases = [
 
 const principles = [
   {
-    index: '01',
     icon: Smartphone,
     title: 'Test on the phones your users own',
     body: 'A simulator on a fast laptop hides everything. I test on real devices, including the three-year-old mid-range Android a large share of your users are actually holding.'
   },
   {
-    index: '02',
     icon: Layers,
     title: 'Native where it matters',
     body: 'React Native covers the vast majority of an app. Camera, biometrics, background location and hardware integrations get native modules when the ecosystem does not already have a good one.'
   },
   {
-    index: '03',
     icon: TestTube2,
     title: 'Tests on the paths that cost money',
     body: 'Checkout, login and sync get end-to-end coverage on both platforms. I do not chase a coverage percentage on screens whose worst failure is a misaligned label.'
   },
   {
-    index: '04',
     icon: RefreshCw,
     title: 'Ship without waiting on review',
     body: 'Over-the-air updates push JavaScript fixes to users in minutes, with store submissions reserved for native changes. A typo does not cost you a three-day review cycle.'
   },
   {
-    index: '05',
     icon: Bell,
     title: 'Notifications with a reason to exist',
     body: 'Push is the strongest retention tool a mobile app has and the fastest way to get uninstalled. Segmentation, quiet hours and per-category preferences are designed in from the start.'
   },
   {
-    index: '06',
     icon: LineChart,
     title: 'Know what happens after launch',
     body: 'Crash reporting, release health and product analytics are wired up before the first submission, so week one is spent reading real numbers instead of guessing.'
@@ -101,12 +95,7 @@ export function Approach() {
 
       <Lattice className="mt-12 md:grid-cols-2 lg:grid-cols-3">
         {principles.map((principle) => (
-          <LatticeCell
-            key={principle.index}
-            index={principle.index}
-            icon={principle.icon}
-            title={principle.title}
-          >
+          <LatticeCell key={principle.title} icon={principle.icon} title={principle.title}>
             {principle.body}
           </LatticeCell>
         ))}
