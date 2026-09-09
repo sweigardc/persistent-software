@@ -23,6 +23,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 const navItems = [
   { label: 'Mobile', href: '/mobile' },
   { label: 'Migrations', href: '/migrations' },
+  { label: 'tokenlog', href: 'https://tokenlog.persistentsoftware.com', external: true },
   { label: 'About', href: '/about' }
 ];
 
@@ -34,18 +35,36 @@ function NavLinks() {
   return (
     <>
       {navItems.map((item) => {
-        const active = pathname === item.href;
+        const active = !item.external && pathname === item.href;
+        const className = cn(
+          'ps-label border-b-2 pb-1 transition-colors duration-[120ms]',
+          active
+            ? 'border-signal-500 text-graphite-900'
+            : 'border-transparent text-graphite-500 hover:text-graphite-900'
+        );
+
+        // tokenlog lives on its own subdomain, so it leaves the app rather than
+        // routing through the Next.js client router.
+        if (item.external) {
+          return (
+            <a
+              key={item.href}
+              href={item.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={className}
+            >
+              {item.label}
+            </a>
+          );
+        }
+
         return (
           <Link
             key={item.href}
             href={item.href}
             aria-current={active ? 'page' : undefined}
-            className={cn(
-              'ps-label border-b-2 pb-1 transition-colors duration-[120ms]',
-              active
-                ? 'border-signal-500 text-graphite-900'
-                : 'border-transparent text-graphite-500 hover:text-graphite-900'
-            )}
+            className={className}
           >
             {item.label}
           </Link>
