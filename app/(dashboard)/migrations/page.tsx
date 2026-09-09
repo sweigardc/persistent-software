@@ -28,7 +28,6 @@ export default function Migrations() {
       <Hero />
       <Economics />
       <Performance />
-      <CaseStudy />
       <Approach />
       <CTA />
     </main>

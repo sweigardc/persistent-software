@@ -60,7 +60,7 @@ const paths = [
 
 export function Approach() {
   return (
-    <Band className="pt-0 pb-16 md:pt-0 md:pb-20">
+    <Band id="the-method" className="pt-0 pb-16 md:pt-0 md:pb-20">
       <SectionHeader label="The method" />
       <div className="mt-10 max-w-[68ch]">
         <h2 className="text-h2">AI writes fast. The process is what makes it safe.</h2>

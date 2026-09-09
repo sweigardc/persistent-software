@@ -11,7 +11,7 @@ export function Hero() {
           <h1>Twenty years of shipping, one person to talk to.</h1>
           <p className="max-w-[52ch] text-lead text-graphite-500">
             I&rsquo;m Chris Sweigard. I&rsquo;ve led engineering at an education company
-            through an acquisition, built and sold side projects, and spent the last two
+            , built side projects, and spent the last two
             years folding AI tooling into a practice that still cares about architecture.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">

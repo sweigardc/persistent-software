@@ -39,7 +39,7 @@ export function Hero() {
             </a>
           </Button>
           <Button asChild variant="inverse" size="lg">
-            <a href="#case-study">Read the Java to Python story</a>
+            <a href="#the-method">Read the method</a>
           </Button>
         </div>
       </div>
