@@ -34,6 +34,12 @@ function UserMenu() {
     return (
       <>
         <Link
+          href="/mobile"
+          className="text-sm font-medium text-gray-700 hover:text-gray-900"
+        >
+          Mobile
+        </Link>
+        <Link
           href="/migrations"
           className="text-sm font-medium text-gray-700 hover:text-gray-900"
         >

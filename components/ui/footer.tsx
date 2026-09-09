@@ -6,6 +6,7 @@ const Footer: React.FC = () => {
       <div style={styles.container}>
         <p style={styles.text}>© {new Date().getFullYear()} Persistent Software. All rights reserved.</p>
         <nav style={styles.nav}>
+          <a href="/mobile" style={styles.link}>Mobile</a>
           <a href="/migrations" style={styles.link}>Migrations</a>
           <a href="/about" style={styles.link}>About Us</a>
           <a href="/terms" style={styles.link}>Terms of Service</a>
