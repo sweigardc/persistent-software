@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="Two brands' apps call the same API. Each request's key resolves one tenant, the API binds it on the database connection, and row-level security returns only that brand's rows.">
+  <title>Tenant isolation</title>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b7788"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#030712"/>
+
+  <text x="40" y="52" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.5" fill="#00b7d7">MULTI-TENANT BY CONSTRUCTION</text>
+  <text x="40" y="88" font-family="Manrope, Inter, 'Segoe UI', system-ui, sans-serif" font-size="30" font-weight="800" fill="#f3f4f6">One backend. Every brand sealed off.</text>
+
+  <!-- apps -->
+  <rect x="40" y="150" width="220" height="110" rx="12" fill="#0b1220" stroke="#1f2a37"/>
+  <circle cx="66" cy="186" r="7" fill="#a385ff"/>
+  <text x="82" y="191" font-family="Manrope, Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#f3f4f6">AutoCycle AI</text>
+  <text x="60" y="226" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#9aa4b2">X-Api-Key: wl_ac7…</text>
+
+  <rect x="40" y="300" width="220" height="110" rx="12" fill="#0b1220" stroke="#1f2a37"/>
+  <circle cx="66" cy="336" r="7" fill="#00b7d7"/>
+  <text x="82" y="341" font-family="Manrope, Inter, system-ui, sans-serif" font-size="16" font-weight="700" fill="#f3f4f6">Persistent Software</text>
+  <text x="60" y="376" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#9aa4b2">X-Api-Key: wl_ps2…</text>
+
+  <line x1="260" y1="205" x2="338" y2="205" stroke="#6b7788" stroke-width="1.5" marker-end="url(#ah)"/>
+  <line x1="260" y1="355" x2="338" y2="355" stroke="#6b7788" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- API -->
+  <rect x="340" y="150" width="220" height="260" rx="12" fill="#0b1220" stroke="#1f2a37"/>
+  <text x="360" y="184" font-family="Manrope, Inter, system-ui, sans-serif" font-size="17" font-weight="800" fill="#f3f4f6">API</text>
+  <text x="360" y="218" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#e5e7eb">1  resolve tenant from key</text>
+  <text x="360" y="244" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#e5e7eb">2  bind app.tenant_id</text>
+  <text x="360" y="270" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#e5e7eb">3  query as whitelabel_app</text>
+  <line x1="360" y1="334" x2="540" y2="334" stroke="#1f2a37"/>
+  <text x="360" y="360" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#9aa4b2">bound tenant</text>
+  <text x="360" y="386" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="12" fill="#a385ff" opacity="0">autocycle
+  </text>
+  <text x="360" y="386" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="12" fill="#00b7d7" opacity="0">persistentsoftware
+  </text>
+
+  <line x1="560" y1="280" x2="618" y2="280" stroke="#6b7788" stroke-width="1.5" marker-end="url(#ah)"/>
+  <text x="589" y="270" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" fill="#9aa4b2">query</text>
+
+  <!-- database -->
+  <rect x="620" y="130" width="300" height="350" rx="12" fill="#0b1220" stroke="#1f2a37"/>
+  <text x="640" y="162" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="13" fill="#f3f4f6">entries</text>
+  <text x="900" y="162" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" fill="#6b7788">policy tenant_isolation</text>
+  <line x1="640" y1="180" x2="900" y2="180" stroke="#1f2a37"/>
+
+  <g>
+    <rect x="632" y="196" width="276" height="34" rx="6" fill="#111a2b"/>
+    <rect x="642" y="203" width="26" height="20" rx="4" fill="#2b2447"/>
+    <text x="655" y="217" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9.5" fill="#a385ff">AC</text>
+    <text x="678" y="218" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#e5e7eb">Ride further on a single charge</text>
+    <rect x="632" y="280" width="276" height="34" rx="6" fill="#111a2b"/>
+    <rect x="642" y="287" width="26" height="20" rx="4" fill="#2b2447"/>
+    <text x="655" y="301" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9.5" fill="#a385ff">AC</text>
+    <text x="678" y="302" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#e5e7eb">How far can I ride on one charge?</text>
+    <rect x="632" y="364" width="276" height="34" rx="6" fill="#111a2b"/>
+    <rect x="642" y="371" width="26" height="20" rx="4" fill="#2b2447"/>
+    <text x="655" y="385" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9.5" fill="#a385ff">AC</text>
+    <text x="678" y="386" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#e5e7eb">Winter riding checklist</text>
+  </g>
+  <g>
+    <rect x="632" y="238" width="276" height="34" rx="6" fill="#111a2b"/>
+    <rect x="642" y="245" width="26" height="20" rx="4" fill="#0b3440"/>
+    <text x="655" y="259" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9.5" fill="#00b7d7">PS</text>
+    <text x="678" y="260" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#e5e7eb">Ship real software, faster</text>
+    <rect x="632" y="322" width="276" height="34" rx="6" fill="#111a2b"/>
+    <rect x="642" y="329" width="26" height="20" rx="4" fill="#0b3440"/>
+    <text x="655" y="343" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9.5" fill="#00b7d7">PS</text>
+    <text x="678" y="344" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#e5e7eb">Start a project</text>
+    <rect x="632" y="406" width="276" height="34" rx="6" fill="#111a2b"/>
+    <rect x="642" y="413" width="26" height="20" rx="4" fill="#0b3440"/>
+    <text x="655" y="427" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="9.5" fill="#00b7d7">PS</text>
+    <text x="678" y="428" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#e5e7eb">About Persistent Software</text>
+  </g>
+
+  <text x="640" y="466" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#a385ff" opacity="0">3 rows · AutoCycle only
+  </text>
+  <text x="640" y="466" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#00b7d7" opacity="0">3 rows · Persistent only
+  </text>
+
+  <!-- requests -->
+  <circle r="6" fill="#a385ff" opacity="0">
+  </circle>
+  <circle r="6" fill="#a385ff" opacity="0">
+  </circle>
+  <circle r="6" fill="#00b7d7" opacity="0">
+  </circle>
+  <circle r="6" fill="#00b7d7" opacity="0">
+  </circle>
+
+  <text x="40" y="516" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="12" fill="#6b7788">Row-level security, forced on every tenant table · no tenant bound → 0 rows</text>
+</svg>

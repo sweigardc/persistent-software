@@ -25,9 +25,9 @@ export default function HomePage() {
               Personal · Experienced · Fast
             </span>
             <h1 className="text-h1 md:text-display">
-              Working software
+              Ship software
               <br />
-              in week one.
+              faster than ever.
             </h1>
             <p className="max-w-[46ch] text-lead text-graphite-300">
               Persistent Software is one senior engineer with two decades of production

@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="960" height="540" role="img" aria-label="A company's website is read for its colours, every text pair is checked against WCAG AA, and a pair that fails — white text on the cyan accent, at 3.63 to 1 — is flagged, while the near-black label at 5.30 to 1 passes before the brand is applied.">
+  <title>From website to brand</title>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6b7788"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="#030712"/>
+
+  <text x="40" y="52" font-family="'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" letter-spacing="1.5" fill="#00b7d7">IMPORT A SITE</text>
+  <text x="40" y="88" font-family="Manrope, Inter, 'Segoe UI', system-ui, sans-serif" font-size="30" font-weight="800" fill="#f3f4f6">Paste a website. Get a brand you can ship.</text>
+
+  <!-- the site -->
+  <rect x="40" y="140" width="290" height="330" rx="12" fill="#0b1220" stroke="#1f2a37"/>
+  <rect x="58" y="158" width="254" height="30" rx="8" fill="#111a2b"/>
+  <text x="72" y="178" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="12" fill="#e5e7eb">persistentsoftware.com
+    <animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.04;0.08;0.97;1" values="0;0;1;1;0"/>
+  </text>
+  <rect x="58" y="202" width="254" height="112" rx="8" fill="#ffffff"/>
+  <text x="74" y="232" font-family="Manrope, Inter, system-ui, sans-serif" font-size="15" font-weight="800" fill="#101828">Ship real software,</text>
+  <text x="74" y="252" font-family="Manrope, Inter, system-ui, sans-serif" font-size="15" font-weight="800" fill="#101828">faster than ever.</text>
+  <rect x="74" y="268" width="118" height="30" rx="7" fill="#0092b5"/>
+  <text x="133" y="288" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="11" font-weight="600" fill="#041016">Start a project</text>
+
+  <text x="58" y="344" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="10" letter-spacing="1" fill="#6b7788">COLOURS FOUND IN ITS CSS</text>
+  <g>
+    <animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.12;0.14;0.97;1" values="0;0;1;1;0"/>
+    <rect x="58" y="358" width="22" height="22" rx="5" fill="#ffffff" stroke="#37414f"/>
+    <text x="88" y="374" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#e5e7eb">#ffffff</text>
+    <text x="312" y="374" text-anchor="end" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="11" fill="#9aa4b2">background</text>
+  </g>
+  <g>
+    <animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.18;0.2;0.97;1" values="0;0;1;1;0"/>
+    <rect x="58" y="388" width="22" height="22" rx="5" fill="#101828" stroke="#37414f"/>
+    <text x="88" y="404" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#e5e7eb">#101828</text>
+    <text x="312" y="404" text-anchor="end" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="11" fill="#9aa4b2">text</text>
+  </g>
+  <g>
+    <animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.24;0.26;0.97;1" values="0;0;1;1;0"/>
+    <rect x="58" y="418" width="22" height="22" rx="5" fill="#0092b5" stroke="#37414f"/>
+    <text x="88" y="434" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#e5e7eb">#0092b5</text>
+    <text x="312" y="434" text-anchor="end" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="11" fill="#9aa4b2">accent</text>
+  </g>
+
+  <line x1="330" y1="300" x2="378" y2="300" stroke="#6b7788" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- the checks -->
+  <rect x="380" y="140" width="280" height="330" rx="12" fill="#0b1220" stroke="#1f2a37"/>
+  <text x="400" y="172" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" letter-spacing="1" fill="#9aa4b2">WCAG AA · 4.5:1 FOR TEXT</text>
+  <line x1="400" y1="188" x2="640" y2="188" stroke="#1f2a37"/>
+
+  <g>
+    <animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.36;0.38;0.97;1" values="0;0;1;1;0"/>
+    <rect x="400" y="206" width="34" height="24" rx="5" fill="#ffffff"/>
+    <text x="417" y="223" text-anchor="middle" font-family="Manrope, Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#101828">Aa</text>
+    <text x="446" y="222" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#e5e7eb">Text on background</text>
+    <text x="640" y="222" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="12" fill="#22c55e">17.75:1 ✓</text>
+  </g>
+
+  <g>
+    <animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.48;0.5;0.97;1" values="0;0;1;1;0"/>
+    <rect x="400" y="252" width="34" height="24" rx="5" fill="#0092b5"/>
+    <text x="417" y="269" text-anchor="middle" font-family="Manrope, Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#ffffff">Aa</text>
+    <text x="446" y="268" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#e5e7eb">White on accent</text>
+    <text x="640" y="268" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="12" fill="#ef4444">3.63:1 ✗</text>
+    <text x="446" y="286" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="11" fill="#9aa4b2">too faint to read on a phone</text>
+  </g>
+
+  <g>
+    <animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.6;0.62;0.97;1" values="0;0;1;1;0"/>
+    <rect x="400" y="310" width="34" height="24" rx="5" fill="#0092b5"/>
+    <text x="417" y="327" text-anchor="middle" font-family="Manrope, Inter, system-ui, sans-serif" font-size="12" font-weight="800" fill="#041016">Aa</text>
+    <text x="446" y="326" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#e5e7eb">Near-black on accent</text>
+    <text x="640" y="326" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="12" fill="#22c55e">5.30:1 ✓</text>
+    <text x="446" y="344" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="11" fill="#9aa4b2">the pair that ships</text>
+  </g>
+  <line x1="400" y1="372" x2="640" y2="372" stroke="#1f2a37"/>
+  <text x="400" y="400" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#9aa4b2">A failing pair is flagged,</text>
+  <text x="400" y="418" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" fill="#9aa4b2">never quietly published.</text>
+
+  <line x1="660" y1="300" x2="698" y2="300" stroke="#6b7788" stroke-width="1.5" marker-end="url(#ah)"/>
+
+  <!-- the result -->
+  <g>
+    <animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.7;0.73;0.97;1" values="0;0;1;1;0"/>
+    <rect x="700" y="140" width="220" height="330" rx="12" fill="#0b1220" stroke="#1f2a37"/>
+    <text x="720" y="172" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" letter-spacing="1" fill="#9aa4b2">PREVIEW</text>
+    <rect x="720" y="190" width="180" height="200" rx="18" fill="#ffffff"/>
+    <rect x="736" y="208" width="22" height="22" rx="5" fill="#0092b5"/>
+    <text x="747" y="223" text-anchor="middle" font-family="Manrope, Inter, system-ui, sans-serif" font-size="9" font-weight="800" fill="#041016">PS</text>
+    <text x="766" y="223" font-family="Manrope, Inter, system-ui, sans-serif" font-size="11" font-weight="700" fill="#101828">Persistent Software</text>
+    <text x="736" y="262" font-family="Manrope, Inter, system-ui, sans-serif" font-size="15" font-weight="800" fill="#101828">Ship real software,</text>
+    <text x="736" y="282" font-family="Manrope, Inter, system-ui, sans-serif" font-size="15" font-weight="800" fill="#101828">faster than ever.</text>
+    <rect x="736" y="336" width="148" height="36" rx="9" fill="#0092b5"/>
+    <text x="810" y="359" text-anchor="middle" font-family="Inter, 'Segoe UI', system-ui, sans-serif" font-size="12" font-weight="600" fill="#041016">Start a project</text>
+    <rect x="720" y="410" width="100" height="36" rx="8" fill="#00b7d7"/>
+    <text x="770" y="433" text-anchor="middle" font-family="Manrope, Inter, system-ui, sans-serif" font-size="14" font-weight="700" fill="#041016">Apply</text>
+    <circle cx="770" cy="428" r="0" fill="none" stroke="#00b7d7" stroke-width="2" opacity="0">
+      <animate attributeName="r" dur="12s" repeatCount="indefinite" keyTimes="0;0.84;0.9;1" values="0;0;36;36"/>
+      <animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.839;0.84;0.9;1" values="0;0;0.9;0;0"/>
+    </circle>
+    <text x="900" y="433" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="11" fill="#22c55e" opacity="0">published
+      <animate attributeName="opacity" dur="12s" repeatCount="indefinite" keyTimes="0;0.9;0.91;0.97;1" values="0;0;1;1;0"/>
+    </text>
+  </g>
+
+  <text x="40" y="524" font-family="'JetBrains Mono', ui-monospace, Menlo, monospace" font-size="12" fill="#6b7788">Colours read from the site's own CSS · every text pair checked before anything ships</text>
+</svg>

@@ -17,8 +17,8 @@ export function Hero() {
         </span>
 
         <h1 className="text-h1 md:text-display">
-          The prototype proved the idea.
-          <span className="mt-2 block text-signal-400">Now ship it to the app stores.</span>
+          The prototype worked.
+          <span className="mt-2 block text-signal-400">Now make it scale.</span>
         </h1>
 
         <p className="max-w-[52ch] text-lead text-graphite-300">
