@@ -2,6 +2,12 @@ import { checkoutAction } from '@/lib/payments/actions';
 import { Check } from 'lucide-react';
 import { getStripePrices, getStripeProducts } from '@/lib/payments/stripe';
 import { SubmitButton } from './submit-button';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Pricing | Persistent Software',
+  robots: { index: false, follow: true }
+};
 
 // Prices are fresh for one hour max
 export const revalidate = 3600;

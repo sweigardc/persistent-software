@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { Band } from '@/components/ps/band';
 import { Stat } from '@/components/ps/stat';
@@ -5,6 +6,19 @@ import { Terminal } from '@/components/ps/terminal';
 import { Services } from './components/Services';
 import { Process } from './components/Process';
 import { Product } from './components/Product';
+
+export const metadata: Metadata = {
+  title: 'Full-Stack, Mobile, & AI Engineering | Persistent Software',
+  description:
+    'One senior engineer, twenty years of production experience. Full-stack builds, React Native apps, AI-assisted migrations and integrations — and you own the codebase.',
+  openGraph: {
+    title: 'Full-Stack, Mobile, & AI Engineering | Persistent Software',
+    description:
+      'One senior engineer, twenty years of production experience. Full-stack builds, React Native apps, AI-assisted migrations and integrations — and you own the codebase.',
+    url: 'https://www.persistentsoftware.com',
+    siteName: 'Persistent Software'
+  }
+};
 
 const terminalLines = [
   'kickoff call: scope the build',
