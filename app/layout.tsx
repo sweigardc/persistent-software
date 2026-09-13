@@ -5,8 +5,12 @@ import { getUser, getTeamForUser } from '@/lib/db/queries';
 import { SWRConfig } from 'swr';
 import { Analytics } from '@vercel/analytics/react';
 import { Footer } from '@/components/ui/footer';
+import { SITE_URL } from '@/lib/site';
 
 export const metadata: Metadata = {
+  // Every relative URL in metadata — openGraph.url, the generated
+  // opengraph-image — resolves against this.
+  metadataBase: new URL(SITE_URL),
   title: 'Persistent Software',
   description:
     'One senior engineer, twenty years of production experience. Full-stack builds, mobile apps, payments and integrations — and you own the codebase.',
@@ -18,7 +22,14 @@ export const metadata: Metadata = {
     description:
       'One senior engineer, twenty years of production experience. Full-stack builds, mobile apps, payments and integrations — and you own the codebase.',
     url: 'https://www.persistentsoftware.com',
-    siteName: 'Persistent Software'
+    siteName: 'Persistent Software',
+    type: 'website',
+    locale: 'en_US'
+  },
+  // Card type only: each page's own title, description and generated image
+  // fill the rest, so a page never shares under the site-wide blurb.
+  twitter: {
+    card: 'summary_large_image'
   }
 };
 
