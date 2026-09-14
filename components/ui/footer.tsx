@@ -3,6 +3,7 @@ import React from 'react';
 const links = [
   { label: 'Mobile', href: '/mobile' },
   { label: 'Migrations', href: '/migrations' },
+  { label: 'AI Search', href: '/ai-search' },
   { label: 'About', href: '/about' },
   { label: 'Terms', href: '/terms' },
   { label: 'Privacy', href: '/privacy' }

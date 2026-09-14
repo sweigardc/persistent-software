@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useState, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
-import { Home, LogOut } from 'lucide-react';
+import { Home, LogOut, Menu, X } from 'lucide-react';
 import Image from 'next/image';
 import {
   DropdownMenu,
@@ -23,6 +23,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 const navItems = [
   { label: 'Mobile', href: '/mobile' },
   { label: 'Migrations', href: '/migrations' },
+  { label: 'AI Search', href: '/ai-search' },
   { label: 'tokenlog', href: 'https://tokenlog.persistentsoftware.com', external: true },
   { label: 'About', href: '/about' }
 ];
@@ -71,6 +72,53 @@ function NavLinks() {
         );
       })}
     </>
+  );
+}
+
+// Below the sm breakpoint the nav collapses into a dropdown behind a menu
+// button, so the header stays one row however many items it carries.
+function MobileNav() {
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  return (
+    <DropdownMenu open={open} onOpenChange={setOpen}>
+      <DropdownMenuTrigger
+        aria-label={open ? 'Close menu' : 'Open menu'}
+        className="flex size-9 items-center justify-center rounded-control border border-rule text-graphite-900 transition-colors duration-[120ms] hover:bg-sunk sm:hidden"
+      >
+        {open ? (
+          <X className="size-5" strokeWidth={1.75} />
+        ) : (
+          <Menu className="size-5" strokeWidth={1.75} />
+        )}
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" sideOffset={10} className="w-56 bg-surface p-1.5">
+        {navItems.map((item) => {
+          const active = !item.external && pathname === item.href;
+          const className = cn(
+            'ps-label w-full cursor-pointer border-l-2 px-3 py-3 focus:bg-sunk',
+            active
+              ? 'border-signal-500 text-graphite-900'
+              : 'border-transparent text-graphite-500 focus:text-graphite-900'
+          );
+
+          return (
+            <DropdownMenuItem key={item.href} asChild className={className}>
+              {item.external ? (
+                <a href={item.href} target="_blank" rel="noopener noreferrer">
+                  {item.label}
+                </a>
+              ) : (
+                <Link href={item.href} aria-current={active ? 'page' : undefined}>
+                  {item.label}
+                </Link>
+              )}
+            </DropdownMenuItem>
+          );
+        })}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 }
 
@@ -125,14 +173,14 @@ function UserMenu() {
 function Header() {
   return (
     <header className="border-b border-rule bg-paper">
-      <div className="mx-auto flex max-w-page items-center justify-between gap-6 px-6 py-4">
-        <Link href="/" className="flex items-center gap-2.5">
+      <div className="mx-auto flex max-w-page items-center justify-between gap-3 px-6 py-4 sm:gap-6">
+        <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-2.5">
           <Image src="/ps-logo.png" width={24} height={24} alt="" />
-          <span className="text-base font-extrabold tracking-[-0.02em] text-graphite-900">
+          <span className="whitespace-nowrap text-[15px] font-extrabold tracking-[-0.02em] text-graphite-900 sm:text-base">
             Persistent Software
           </span>
         </Link>
-        <div className="flex items-center gap-5 sm:gap-7">
+        <div className="flex items-center gap-3 sm:gap-7">
           <nav className="hidden items-center gap-5 sm:flex sm:gap-7">
             <NavLinks />
           </nav>
@@ -145,14 +193,12 @@ function Header() {
               Book a call
             </a>
           </Button>
+          <MobileNav />
           <Suspense fallback={null}>
             <UserMenu />
           </Suspense>
         </div>
       </div>
-      <nav className="flex items-center gap-6 border-t border-rule px-6 py-3 sm:hidden">
-        <NavLinks />
-      </nav>
     </header>
   );
 }

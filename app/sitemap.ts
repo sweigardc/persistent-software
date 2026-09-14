@@ -9,6 +9,7 @@ const routes: { path: string; changeFrequency: 'monthly' | 'yearly'; priority: n
   { path: '/', changeFrequency: 'monthly', priority: 1 },
   { path: '/mobile', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/migrations', changeFrequency: 'monthly', priority: 0.9 },
+  { path: '/ai-search', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/about', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/privacy', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/terms', changeFrequency: 'yearly', priority: 0.2 }
