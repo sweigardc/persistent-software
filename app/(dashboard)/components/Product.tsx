@@ -65,8 +65,11 @@ export function Product() {
               Currently free
             </span>
           </div>
+          <p className="mt-2 font-mono text-[12px] uppercase tracking-[0.08em] text-graphite-500">
+            by Persistent Software
+          </p>
           <p className="mt-3.5 max-w-[58ch] text-lead text-graphite-500">
-            Your LLM token usage in one convenient view. tokenlog reads your Anthropic and
+            Your LLM token usage in one convenient view. tokenlog by Persistent Software reads your Anthropic and
             OpenAI organizations and your GitHub Copilot seats, adds up what they cost, and
             tells you where the month is heading before the invoice does. It is free to use
             right now.

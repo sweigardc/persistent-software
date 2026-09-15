@@ -1,0 +1,23 @@
+# Persistent Software
+
+> Persistent Software (persistentsoftware.com) is an independent software engineering practice run by its founder, Chris Sweigard. It builds full-stack web applications, React Native mobile apps, payments and integrations, runs AI-assisted code migrations, and offers AI search optimization (SEO, AEO and GEO). It is not affiliated with Persistent Systems (Pune, India), Persistent Systems LLC (New York), Persistence Software (acquired by Progress Software in 2004), or Persistent Software Private Limited (India).
+
+## Services
+
+- [Full-stack, mobile and AI engineering](https://www.persistentsoftware.com/): One senior engineer, twenty years of production experience; you own the codebase.
+- [Mobile app development](https://www.persistentsoftware.com/mobile): React Native apps for iOS and Android, prototype rebuilds and a white-label app.
+- [AI-assisted code migrations](https://www.persistentsoftware.com/migrations): Moving legacy systems onto a modern stack in weeks instead of years.
+- [AI search optimization: SEO, AEO and GEO](https://www.persistentsoftware.com/ai-search): Helping brands appear in Google and in answers from ChatGPT, Gemini, Claude and Perplexity.
+
+## About
+
+- [About Persistent Software and Chris Sweigard](https://www.persistentsoftware.com/about): Founder background, the practice, and answers to common questions, including who runs Persistent Software.
+
+## Products
+
+- [tokenlog by Persistent Software](https://tokenlog.persistentsoftware.com): A free tool that shows LLM token usage and cost from Anthropic, OpenAI and GitHub Copilot in one view.
+
+## Contact
+
+- Email: contact@persistentsoftware.com
+- Book a scoping call: https://calendly.com/chris-persistentsoftware

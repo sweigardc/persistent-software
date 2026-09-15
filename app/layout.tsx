@@ -6,6 +6,7 @@ import { SWRConfig } from 'swr';
 import { Analytics } from '@vercel/analytics/react';
 import { Footer } from '@/components/ui/footer';
 import { SITE_URL } from '@/lib/site';
+import { entityGraph } from '@/lib/entity';
 
 export const metadata: Metadata = {
   // Every relative URL in metadata — openGraph.url, the generated
@@ -63,6 +64,12 @@ export default function RootLayout({
       className={`${manrope.variable} ${jetbrainsMono.variable} bg-paper text-graphite-900`}
     >
       <body className="min-h-[100dvh] bg-paper font-sans antialiased">
+        {/* Organization, founder, website and tokenlog on every page, so crawlers
+            never have to guess which "Persistent" this is. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(entityGraph) }}
+        />
         <SWRConfig
           value={{
             fallback: {
