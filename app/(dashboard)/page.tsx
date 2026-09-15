@@ -6,15 +6,19 @@ import { Terminal } from '@/components/ps/terminal';
 import { Services } from './components/Services';
 import { Process } from './components/Process';
 import { Product } from './components/Product';
+import { Practice } from './components/Practice';
 
 export const metadata: Metadata = {
-  title: 'Full-Stack, Mobile, & AI Engineering | Persistent Software',
+  title: 'Persistent Software — Full-Stack, Mobile & AI Engineering',
   description:
-    'One senior engineer, twenty years of production experience. Full-stack builds, React Native apps, AI-assisted migrations and integrations — and you own the codebase.',
+    'Persistent Software is Chris Sweigard: one senior engineer, twenty years of production experience. Full-stack builds, React Native apps, AI-assisted migrations and integrations — and you own the codebase.',
+  alternates: {
+    canonical: '/'
+  },
   openGraph: {
-    title: 'Full-Stack, Mobile, & AI Engineering | Persistent Software',
+    title: 'Persistent Software — Full-Stack, Mobile & AI Engineering',
     description:
-      'One senior engineer, twenty years of production experience. Full-stack builds, React Native apps, AI-assisted migrations and integrations — and you own the codebase.',
+      'Persistent Software is Chris Sweigard: one senior engineer, twenty years of production experience. Full-stack builds, React Native apps, AI-assisted migrations and integrations — and you own the codebase.',
     url: 'https://www.persistentsoftware.com',
     siteName: 'Persistent Software'
   }
@@ -44,9 +48,9 @@ export default function HomePage() {
               faster than ever.
             </h1>
             <p className="max-w-[46ch] text-lead text-graphite-300">
-              Persistent Software is one senior engineer with two decades of production
-              experience and modern tooling behind it. You get a prototype you can click in
-              days, and the codebase itself at the end.
+              Persistent Software is Chris Sweigard: one senior engineer with two decades of
+              production experience and modern tooling behind it. You get a prototype you can
+              click in days, and the codebase itself at the end.
             </p>
             <div className="flex flex-col gap-3 pt-1 sm:flex-row">
               <Button asChild variant="signal" size="lg">
@@ -70,6 +74,7 @@ export default function HomePage() {
       <Services />
       <Process />
       <Product />
+      <Practice />
 
       <Band tone="ink" spine className="py-16 md:py-20">
         <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">

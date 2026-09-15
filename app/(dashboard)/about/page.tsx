@@ -4,16 +4,20 @@ import { Hero } from './components/Hero';
 import { Story } from './components/Story';
 import { Expertise } from './components/Expertise';
 import { Services } from './components/Services';
+import { FAQ } from './components/FAQ';
 import { CTA } from './components/CTA';
 
 export const metadata: Metadata = {
-  title: 'About | Persistent Software',
+  title: 'About Persistent Software and Chris Sweigard',
   description:
-    'Persistent Software is Chris Sweigard: twenty years shipping production software, eight of them leading engineering teams. One person to talk to, whole stack.',
+    'Persistent Software is run by its founder, Chris Sweigard: twenty years shipping production software, eight of them leading engineering teams. One person to talk to, whole stack.',
+  alternates: {
+    canonical: '/about'
+  },
   openGraph: {
-    title: 'About | Persistent Software',
+    title: 'About Persistent Software and Chris Sweigard',
     description:
-      'Persistent Software is Chris Sweigard: twenty years shipping production software, eight of them leading engineering teams.',
+      'Persistent Software is run by its founder, Chris Sweigard: twenty years shipping production software, eight of them leading engineering teams.',
     url: 'https://www.persistentsoftware.com/about',
     siteName: 'Persistent Software'
   }
@@ -26,6 +30,7 @@ export default function About() {
       <Story />
       <Expertise />
       <Services />
+      <FAQ />
       <CTA />
     </main>
   );

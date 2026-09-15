@@ -10,9 +10,9 @@ export function Hero() {
           <span className="ps-label tracking-[0.16em] text-signal-700">About</span>
           <h1>Twenty years of shipping, one person to talk to.</h1>
           <p className="max-w-[52ch] text-lead text-graphite-500">
-            I&rsquo;m Chris Sweigard. I&rsquo;ve led engineering at an education company,
-            built side projects, and spent the last two
-            years folding AI tooling into a practice that still cares about architecture.
+            I&rsquo;m Chris Sweigard, and I run Persistent Software. I&rsquo;ve led engineering
+            at an education company, built side projects, and spent the last two years folding
+            AI tooling into a practice that still cares about architecture.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button asChild variant="signal">
@@ -31,9 +31,9 @@ export function Hero() {
         </div>
         <Figure
           src="/chris-portrait.jpg"
-          alt="Chris Sweigard"
+          alt="Chris Sweigard, founder of Persistent Software"
           ratio="4/5"
-          caption="Chris Sweigard · Founder"
+          caption="Chris Sweigard · Founder, Persistent Software"
           sizes="(min-width: 768px) 280px, 100vw"
           priority
           className="w-full max-w-[280px]"

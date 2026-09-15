@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     'Retire legacy systems in weeks instead of years. AI-assisted migrations cut cost and timeline while moving you onto a modern, faster, cheaper stack.',
   keywords:
     'code migration, legacy modernization, java to python, ai assisted migration, aws fargate, legacy rewrite, application modernization, persistent software',
+  alternates: {
+    canonical: '/migrations'
+  },
   openGraph: {
     title: 'AI-Assisted Code Migrations | Persistent Software',
     description:
