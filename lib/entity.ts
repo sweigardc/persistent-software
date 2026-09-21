@@ -22,7 +22,10 @@ export const DISAMBIGUATION =
  * and links back to the site (LinkedIn company page, GitHub organization,
  * Crunchbase, Clutch, Google Business Profile).
  */
-export const ORGANIZATION_PROFILES: string[] = [];
+export const ORGANIZATION_PROFILES: string[] = [
+  'https://www.linkedin.com/company/persistent-software',
+  'https://wellfound.com/company/persistent-software'
+];
 export const FOUNDER_PROFILES: string[] = [];
 
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
