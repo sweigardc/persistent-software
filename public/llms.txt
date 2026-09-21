@@ -17,6 +17,11 @@
 
 - [tokenlog by Persistent Software](https://tokenlog.persistentsoftware.com): A free tool that shows LLM token usage and cost from Anthropic, OpenAI and GitHub Copilot in one view.
 
+## Profiles
+
+- [LinkedIn: Persistent Software](https://www.linkedin.com/company/persistent-software)
+- [Wellfound: Persistent Software](https://wellfound.com/company/persistent-software)
+
 ## Contact
 
 - Email: contact@persistentsoftware.com
