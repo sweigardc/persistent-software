@@ -14,11 +14,11 @@ const routes: {
   changeFrequency: 'monthly' | 'yearly';
   priority: number;
 }[] = [
-  { path: '/', lastModified: '2026-09-15', changeFrequency: 'monthly', priority: 1 },
+  { path: '/', lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 1 },
   { path: '/mobile', lastModified: '2026-09-11', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/migrations', lastModified: '2026-09-11', changeFrequency: 'monthly', priority: 0.9 },
   { path: '/ai-search', lastModified: '2026-09-14', changeFrequency: 'monthly', priority: 0.9 },
-  { path: '/about', lastModified: '2026-09-15', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/about', lastModified: '2026-10-12', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/privacy', lastModified: '2026-09-09', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/terms', lastModified: '2026-09-09', changeFrequency: 'yearly', priority: 0.2 }
 ];

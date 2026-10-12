@@ -31,7 +31,7 @@ const faqs: { question: string; answer: string; link?: { href: string; label: st
   },
   {
     question: 'What is tokenlog?',
-    answer: `tokenlog is a free tool by Persistent Software that shows LLM token usage and cost from Anthropic, OpenAI and GitHub Copilot in one view. It runs at ${TOKENLOG_URL.replace('https://', '')}.`
+    answer: `tokenlog is a free tool by Persistent Software that shows LLM token usage across Anthropic, OpenAI, Google Gemini and GitHub Copilot in one view, with spend for the providers that report it. It runs at ${TOKENLOG_URL.replace('https://', '')}.`
   },
   {
     question: 'How do I hire Persistent Software for a software project?',
