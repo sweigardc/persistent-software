@@ -81,7 +81,7 @@ export const entityGraph = {
       applicationCategory: 'DeveloperApplication',
       operatingSystem: 'Web',
       description:
-        'A free tool by Persistent Software that shows LLM token usage and cost from Anthropic, OpenAI and GitHub Copilot in one view.',
+        'A free tool by Persistent Software that shows LLM token usage across Anthropic, OpenAI, Google Gemini and GitHub Copilot in one view, with spend for the providers that report it.',
       offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
       publisher: { '@id': ORGANIZATION_ID }
     }

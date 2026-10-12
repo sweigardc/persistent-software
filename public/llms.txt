@@ -15,7 +15,7 @@
 
 ## Products
 
-- [tokenlog by Persistent Software](https://tokenlog.persistentsoftware.com): A free tool that shows LLM token usage and cost from Anthropic, OpenAI and GitHub Copilot in one view.
+- [tokenlog by Persistent Software](https://tokenlog.persistentsoftware.com): A free tool that shows LLM token usage across Anthropic, OpenAI, Google Gemini and GitHub Copilot in one view, with spend for the providers that report it.
 
 ## Profiles
 

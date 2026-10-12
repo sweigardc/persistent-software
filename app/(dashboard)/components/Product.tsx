@@ -6,7 +6,7 @@ import { Activity, BellRing, KeyRound, Download } from 'lucide-react';
 
 const TOKENLOG_URL = 'https://tokenlog.persistentsoftware.com';
 
-// The three source APIs tokenlog reads. Named the way each provider names the
+// The source APIs tokenlog reads. Named the way each provider names the
 // credential you paste in, because that is the question people actually have.
 const integrations = [
   {
@@ -18,6 +18,10 @@ const integrations = [
     detail: 'Organization admin key. Usage and cost endpoints only.'
   },
   {
+    name: 'Google Gemini',
+    detail: 'Read-only service account. Tokens by model, requests and rate limits; Google reports no cost here.'
+  },
+  {
     name: 'GitHub',
     detail: 'OAuth sign-in, plus Copilot seat and premium-request usage.'
   }
@@ -27,7 +31,7 @@ const features = [
   {
     icon: Activity,
     title: 'Every provider on one page',
-    body: 'Tokens in, out and cached, by model and by key, with each provider’s own spend numbers added up instead of read off three billing pages.'
+    body: 'Tokens in, out and cached, by model and by key, with each provider’s own spend numbers added up instead of read off separate billing pages.'
   },
   {
     icon: BellRing,
@@ -69,10 +73,10 @@ export function Product() {
             by Persistent Software
           </p>
           <p className="mt-3.5 max-w-[58ch] text-lead text-graphite-500">
-            Your LLM token usage in one convenient view. tokenlog by Persistent Software reads your Anthropic and
-            OpenAI organizations and your GitHub Copilot seats, adds up what they cost, and
-            tells you where the month is heading before the invoice does. It is free to use
-            right now.
+            Your LLM token usage in one convenient view. tokenlog by Persistent Software reads
+            your Anthropic and OpenAI organizations, your Google Gemini project and your GitHub
+            Copilot seats, adds up the spend each provider reports, and tells you where the
+            month is heading before the invoice does. It is free to use right now.
           </p>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row lg:justify-end">
@@ -98,11 +102,11 @@ export function Product() {
           />
         </div>
         <figcaption className="mt-2.5 font-mono text-[11px] uppercase leading-relaxed tracking-[0.08em] text-graphite-500">
-          Three sources, one month, one page
+          A month of usage, on one page
         </figcaption>
       </figure>
 
-      <Lattice className="mt-10 sm:grid-cols-3">
+      <Lattice className="mt-10 sm:grid-cols-2 lg:grid-cols-4">
         {integrations.map((integration) => (
           <div key={integration.name} className="flex flex-col gap-2.5 bg-surface p-7">
             <div className="flex items-center gap-2.5">
