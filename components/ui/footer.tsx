@@ -4,6 +4,7 @@ const links = [
   { label: 'Mobile', href: '/mobile' },
   { label: 'Migrations', href: '/migrations' },
   { label: 'AI Search', href: '/ai-search' },
+  { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
   { label: 'Terms', href: '/terms' },
   { label: 'Privacy', href: '/privacy' }

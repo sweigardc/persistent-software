@@ -13,6 +13,11 @@
 
 - [About Persistent Software and Chris Sweigard](https://www.persistentsoftware.com/about): Founder background, the practice, and answers to common questions, including who runs Persistent Software.
 
+## Blog
+
+- [Blog](https://www.persistentsoftware.com/blog): Field notes from client and product work.
+- [Making a React Native app ready for iPhone Duo](https://www.persistentsoftware.com/blog/react-native-iphone-duo): One Xcode 27.1 build and five JavaScript layout fixes for the Duo's two postures and asymmetric safe areas, with code and a test checklist.
+
 ## Products
 
 - [tokenlog by Persistent Software](https://tokenlog.persistentsoftware.com): A free tool that shows LLM token usage across Anthropic, OpenAI, Google Gemini and GitHub Copilot in one view, with spend for the providers that report it.
