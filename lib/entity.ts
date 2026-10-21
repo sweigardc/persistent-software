@@ -28,8 +28,8 @@ export const ORGANIZATION_PROFILES: string[] = [
 ];
 export const FOUNDER_PROFILES: string[] = [];
 
-const ORGANIZATION_ID = `${SITE_URL}/#organization`;
-const FOUNDER_ID = `${SITE_URL}/#chris-sweigard`;
+export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+export const FOUNDER_ID = `${SITE_URL}/#chris-sweigard`;
 
 export const entityGraph = {
   '@context': 'https://schema.org',

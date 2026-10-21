@@ -259,4 +259,100 @@
     background: var(--color-rule);
     border: 1px solid var(--color-rule);
   }
+
+  /* Long-form writing: blog posts. Body copy in graphite-600, headings and
+     emphasis in graphite-900, links the one place signal shows in the text. */
+  .ps-prose {
+    color: var(--color-graphite-600);
+  }
+  .ps-prose > * + * {
+    margin-top: 1.25rem;
+  }
+  .ps-prose > h2:first-child {
+    margin-top: 0;
+  }
+  .ps-prose > h2 {
+    margin-top: 3.5rem;
+    font-size: 28px;
+    color: var(--color-graphite-900);
+  }
+  .ps-prose > h3 {
+    margin-top: 2.5rem;
+    font-size: var(--text-h4);
+    color: var(--color-graphite-900);
+  }
+  .ps-prose > h2 + *,
+  .ps-prose > h3 + * {
+    margin-top: 0.875rem;
+  }
+  .ps-prose > figure,
+  .ps-prose > figure + :not(h2, h3) {
+    margin-top: 2.5rem;
+  }
+  .ps-prose > div:has(> pre),
+  .ps-prose > div:has(> pre) + :not(h2, h3) {
+    margin-top: 2rem;
+  }
+  .ps-prose strong {
+    color: var(--color-graphite-900);
+    font-weight: 700;
+  }
+  .ps-prose a {
+    color: var(--color-signal-700);
+    text-decoration: underline;
+    text-decoration-color: var(--color-signal-200);
+    text-underline-offset: 3px;
+    transition: text-decoration-color var(--duration-fast);
+  }
+  .ps-prose a:hover {
+    text-decoration-color: var(--color-signal-700);
+  }
+  .ps-prose :not(pre) > code {
+    border-radius: var(--radius-control);
+    background: var(--color-sunk);
+    padding: 0.1em 0.35em;
+    font-size: 0.875em;
+    color: var(--color-graphite-900);
+  }
+  .ps-prose ul,
+  .ps-prose ol {
+    padding-left: 1.25rem;
+  }
+  .ps-prose ul {
+    list-style: disc;
+  }
+  .ps-prose ol {
+    list-style: decimal;
+  }
+  .ps-prose li + li {
+    margin-top: 0.5rem;
+  }
+  .ps-prose li::marker {
+    color: var(--color-graphite-400);
+  }
+  .ps-prose table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+  }
+  .ps-prose th {
+    border-bottom: 1px solid var(--color-rule-strong);
+    padding: 0 1rem 0.75rem 0;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-graphite-500);
+  }
+  .ps-prose td {
+    border-bottom: 1px solid var(--color-rule);
+    padding: 0.875rem 1rem 0.875rem 0;
+    vertical-align: top;
+  }
+  .ps-prose td:first-child {
+    color: var(--color-graphite-900);
+    font-weight: 600;
+  }
 }

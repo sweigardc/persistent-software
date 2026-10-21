@@ -25,8 +25,14 @@ const navItems = [
   { label: 'Migrations', href: '/migrations' },
   { label: 'AI Search', href: '/ai-search' },
   { label: 'tokenlog', href: 'https://tokenlog.persistentsoftware.com', external: true },
+  { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' }
 ];
+
+// A section stays active on its child pages, so a blog post lights up Blog.
+function isActive(pathname: string, href: string) {
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 // Nav items are the label voice: mono, uppercase, tracked. The active item is
 // the one place the accent appears in the header.
@@ -36,7 +42,7 @@ function NavLinks() {
   return (
     <>
       {navItems.map((item) => {
-        const active = !item.external && pathname === item.href;
+        const active = !item.external && isActive(pathname, item.href);
         const className = cn(
           'ps-label border-b-2 pb-1 transition-colors duration-[120ms]',
           active
@@ -75,7 +81,7 @@ function NavLinks() {
   );
 }
 
-// Below the sm breakpoint the nav collapses into a dropdown behind a menu
+// Below the lg breakpoint the nav collapses into a dropdown behind a menu
 // button, so the header stays one row however many items it carries.
 function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -85,7 +91,7 @@ function MobileNav() {
     <DropdownMenu open={open} onOpenChange={setOpen}>
       <DropdownMenuTrigger
         aria-label={open ? 'Close menu' : 'Open menu'}
-        className="flex size-9 items-center justify-center rounded-control border border-rule text-graphite-900 transition-colors duration-[120ms] hover:bg-sunk sm:hidden"
+        className="flex size-9 items-center justify-center rounded-control border border-rule text-graphite-900 transition-colors duration-[120ms] hover:bg-sunk lg:hidden"
       >
         {open ? (
           <X className="size-5" strokeWidth={1.75} />
@@ -95,7 +101,7 @@ function MobileNav() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" sideOffset={10} className="w-56 bg-surface p-1.5">
         {navItems.map((item) => {
-          const active = !item.external && pathname === item.href;
+          const active = !item.external && isActive(pathname, item.href);
           const className = cn(
             'ps-label w-full cursor-pointer border-l-2 px-3 py-3 focus:bg-sunk',
             active
@@ -181,7 +187,7 @@ function Header() {
           </span>
         </Link>
         <div className="flex items-center gap-3 sm:gap-7">
-          <nav className="hidden items-center gap-5 sm:flex sm:gap-7">
+          <nav className="hidden items-center gap-7 lg:flex">
             <NavLinks />
           </nav>
           <Button asChild size="sm">

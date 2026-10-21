@@ -11,6 +11,7 @@ This repository is the marketing site. It showcases the practice's services and 
 - Marketing landing page (`/`) covering services, the engineering process, tokenlog, and what Persistent Software is
 - About page (`/about`) with founder background, expertise, services and common questions
 - Service pages for mobile apps (`/mobile`), code migrations (`/migrations`) and AI search optimization (`/ai-search`)
+- Blog (`/blog`), with posts as typed modules in `content/blog` registered in `lib/blog.ts`
 - Structured data (Organization, Person, WebSite, SoftwareApplication, FAQPage) and `/llms.txt`
 - Contact via email and a Calendly link, with no self-serve signup flow
 - Privacy Policy and Terms pages (`/privacy`, `/terms`)
