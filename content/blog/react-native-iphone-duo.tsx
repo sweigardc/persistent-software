@@ -1,5 +1,6 @@
 import type { Post } from '@/lib/blog';
 import { BeforeAfter, CodeBlock } from '@/components/ps/prose';
+import { Figure } from '@/components/ps/figure';
 
 const IMAGES = '/blog/react-native-iphone-duo';
 const PORTRAIT = '687/1000';
@@ -86,7 +87,7 @@ function Body() {
       />
 
       <h2>The fixes</h2>
-      <p>Five changes did it, all in JavaScript, on React Native 0.87.1.</p>
+      <p>Six changes did it on React Native 0.87.1: five in JavaScript, plus moving iPhone to the system tab bar.</p>
 
       <h3>1. Build with Xcode 27.1</h3>
       <p>
@@ -180,6 +181,92 @@ const logoSize = width > height && !Platform.isPad ? 28 : 40
 <KeyboardAvoidingView behavior="padding" keyboardVerticalOffset={useHeaderHeight()}>
 `}</CodeBlock>
 
+      <h3>6. Use the system tab bar so iOS can move it into the side column</h3>
+      <p>
+        On the closed Duo, iOS moves the status bar, toolbar buttons and tab bar into one column
+        beside the camera, but only for bars that come from <code>UITabBarController</code>. A tab
+        bar drawn in JavaScript stays at the bottom of the screen. React Navigation&rsquo;s native
+        bottom tabs use <code>UITabBarController</code>, so switching to them on iPhone moved our
+        tabs into the side column with no layout code of our own.
+      </p>
+      <BeforeAfter
+        before={`${IMAGES}/tabs-closed-before.png`}
+        after={`${IMAGES}/tabs-closed-after.png`}
+        alt="BeerXchange Collection screen on the closed iPhone Duo"
+        ratio={PORTRAIT}
+        caption={
+          <>
+            <strong>Tabs, Duo closed.</strong> Before, the JavaScript tab bar sat along the bottom
+            and took height from the list. After, the system tab bar sits in the side column below
+            the camera, and the list runs the full height of the screen.
+          </>
+        }
+      />
+      <figure className="m-0">
+        <Figure
+          src={`${IMAGES}/tabs-open-after.png`}
+          alt="BeerXchange Collection screen on the open iPhone Duo, with the tabs in the side column"
+          ratio={LANDSCAPE}
+          sizes="(min-width: 1024px) 740px, 100vw"
+        />
+        <figcaption className="mt-3 text-sm text-graphite-500">
+          <strong>Tabs, Duo open.</strong> The open Duo counts as landscape, so the tabs stay in
+          the side column there too.
+        </figcaption>
+      </figure>
+      <CodeBlock label="routes.tsx">{`
+import { createNativeBottomTabNavigator } from '@react-navigation/bottom-tabs/unstable'
+
+const NativeTabs = createNativeBottomTabNavigator()
+
+// iPhone (including Duo): system tab bar. iPad and Android: the existing JS tab bar.
+if (Platform.OS === 'ios' && !Platform.isPad) {
+  return (
+    <NativeTabs.Navigator>
+      <NativeTabs.Screen
+        name="Collection"
+        component={Collection}
+        options={{ headerShown: false, tabBarIcon: { type: 'sfSymbol', name: 'list.bullet' } }}
+      />
+      {/* …one screen per tab */}
+    </NativeTabs.Navigator>
+  )
+}
+`}</CodeBlock>
+      <p>What it took:</p>
+      <ul>
+        <li>
+          <strong>Upgrades.</strong> react-native-screens 4.30.0 (the navigator&rsquo;s minimum)
+          and React Navigation 7.21, then <code>pod install</code> and a native rebuild.
+        </li>
+        <li>
+          <strong>SF Symbols for icons.</strong> Native tabs don&rsquo;t render React components as
+          icons, so each tab names an SF Symbol.
+        </li>
+        <li>
+          <strong>A one-line native fix.</strong> Launched while the Duo was open, the side
+          column came up empty. react-native-screens PR #4990 fixes this by sizing the tab bar
+          controller&rsquo;s view before attaching it. We applied it to 4.30.0 with
+          patch-package until a release includes it.
+        </li>
+        <li>
+          <strong>Pad each tab once by the window insets.</strong> Under the native tab bar, each
+          screen&rsquo;s own safe-area measurement changed mid-transition, so lists re-laid out
+          and dropped taps. We wrap every tab screen in a view padded by the window&rsquo;s left
+          and right insets, and report zero side insets to everything inside it.
+        </li>
+        <li>
+          <strong>Keep the JS tab bar on iPad.</strong> On iPad, UIKit puts the system tab bar at
+          the top, where it covered our JS stack headers, and there is no API to put it back at
+          the bottom. Android also keeps the JS tab bar.
+        </li>
+        <li>
+          <strong>No control over order within the column.</strong> iOS keeps the tabs at the
+          bottom of the side column, as on a regular iPhone, and offers no API to start them at
+          the top.
+        </li>
+      </ul>
+
       <h2>Test checklist</h2>
       <p>
         Test every screen in each of these, and fold or rotate while the app is open, not only
@@ -198,12 +285,12 @@ const logoSize = width > height && !Platform.isPad ? 28 : 40
             <tr>
               <td>iPhone Duo, closed</td>
               <td>466 × 678, 84 pt right inset</td>
-              <td>Nothing under the camera column; no clipping on the left</td>
+              <td>Tabs in the side column below the camera; nothing under it; no clipping on the left</td>
             </tr>
             <tr>
               <td>iPhone Duo, open</td>
               <td>951 × 669</td>
-              <td>Tabs and lists reflow after unfolding; header items fit a 32 pt bar</td>
+              <td>Side-column tabs appear after a cold launch while open; lists reflow; header items fit a 32 pt bar</td>
             </tr>
             <tr>
               <td>Regular iPhone (we used iPhone 18 Pro)</td>
@@ -262,7 +349,7 @@ const post: Post = {
   slug: 'react-native-iphone-duo',
   title: 'Making a React Native app ready for iPhone Duo',
   description:
-    'Getting BeerXchange ready for iPhone Duo took one Xcode 27.1 build and five small layout fixes, all in JavaScript. What the Duo changes, the fixes with code, and a test checklist.',
+    'Getting BeerXchange ready for iPhone Duo took one Xcode 27.1 build, five small layout fixes and a switch to the system tab bar so iOS can place the tabs in the Duo’s side column. What the Duo changes, the fixes with code, and a test checklist.',
   published: '2026-10-16',
   tags: ['React Native', 'iOS', 'iPhone Duo'],
   related: { label: 'Mobile app development', href: '/mobile' },
